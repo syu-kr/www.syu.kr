@@ -178,6 +178,9 @@
               <img src="https://t1.kakaocdn.net/kic_console/brand/logo_black.svg" class="img-fluid" alt="" />
             </div>
             <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
+              <img src="assets/img/kakao.png" class="img-fluid" alt="" />
+            </div>
+            <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
               <img src="assets/img/syu-kr.png" class="img-fluid" alt="" />
             </div>
             <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
@@ -297,19 +300,6 @@
       </div>
     </footer>
     <script src="assets/js/main.js"></script>
-    <script>
-      let countBox = document.getElementById('count')
-      let count = 0
-      let num = 12000
-      let counting = setInterval(function () {
-        if (count >= num) {
-          count = num
-          clearInterval(counting)
-        } else {
-          count += 51
-        }
-        countBox.innerHTML = new Intl.NumberFormat().format(count) + '명'
-      }, 10)
-    </script>
+    <script src="assets/js/count.js"></script>
   </body>
 </html>
