@@ -1,16 +1,15 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ko">
   <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <title>SYU KR</title>
-    <meta name="robots" content="index,follow" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="SYU KR" />
     <meta property="og:description" content="삼육대학교 재학생을 위한 서비스를 제공합니다" />
     <meta property="og:image" content="https://www.syu.kr/assets/img/banner.png" />
     <meta property="og:url" content="https://www.syu.kr/" />
-    <meta content="삼육대학교 재학생을 위한 서비스를 제공합니다" name="description" />
+    <meta name="description" content="삼육대학교 재학생을 위한 서비스를 제공합니다" />
 
     <link href="https://www.syu.kr/favicon/favicon.ico" rel="icon" />
 
@@ -129,6 +128,250 @@
         flex-wrap: wrap;
         max-width: initial;
       }
+
+      p {
+        word-break: keep-all;
+      }
+
+      .chrome-extension-banner {
+        padding: 100px 0;
+        /* background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 50%, #90caf9 100%); */
+        position: relative;
+        overflow: hidden;
+      }
+
+      /* .chrome-extension-banner::before {
+        content: '';
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background: radial-gradient(circle, rgba(0, 118, 255, 0.1) 0%, transparent 70%);
+        animation: rotate-gradient 20s linear infinite;
+        pointer-events: none;
+      } */
+
+      @keyframes rotate-gradient {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+
+      .chrome-extension-card {
+        background: white;
+        border-radius: 20px;
+        padding: 40px;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+        display: flex;
+        align-items: center;
+        gap: 30px;
+        flex-wrap: wrap;
+        position: relative;
+        z-index: 1;
+      }
+
+      @media (max-width: 768px) {
+        .chrome-extension-banner {
+          padding: 60px 0;
+        }
+
+        .chrome-extension-card {
+          padding: 30px 20px;
+          text-align: center;
+          justify-content: center;
+        }
+
+        .chrome-extension-card > div:last-child {
+          width: 100%;
+        }
+
+        .chrome-extension-card a {
+          width: 100% !important;
+          justify-content: center !important;
+        }
+      }
+    </style>
+    <style>
+      @keyframes float {
+        0%,
+        100% {
+          transform: translateY(0px);
+        }
+        50% {
+          transform: translateY(-15px);
+        }
+      }
+
+      @keyframes pulse-glow {
+        0%,
+        100% {
+          box-shadow:
+            0 0 30px rgba(79, 140, 255, 0.4),
+            0 10px 40px rgba(107, 92, 255, 0.3);
+        }
+        50% {
+          box-shadow:
+            0 0 50px rgba(79, 140, 255, 0.6),
+            0 15px 60px rgba(107, 92, 255, 0.5);
+        }
+      }
+
+      @keyframes gradient-shift {
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
+      }
+
+      .circle-services {
+        display: flex;
+        justify-content: center;
+        padding: 40px 20px;
+        background: linear-gradient(180deg, rgba(79, 140, 255, 0.03) 0%, rgba(107, 92, 255, 0.05) 100%);
+        border-radius: 20px;
+      }
+
+      .circle-wrap {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 50px;
+      }
+
+      .circle-wrap .bottom {
+        display: flex;
+        gap: 50px;
+      }
+
+      .circle {
+        position: relative;
+        width: 240px;
+        height: 240px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+        background-size: 200% 200%;
+        color: #fff;
+        font-weight: 800;
+        font-size: 22px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        text-decoration: none;
+        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        box-shadow:
+          0 15px 40px rgba(79, 140, 255, 0.3),
+          0 5px 15px rgba(107, 92, 255, 0.2),
+          inset 0 -5px 20px rgba(255, 255, 255, 0.1);
+        animation: float 6s ease-in-out infinite;
+        overflow: hidden;
+        gap: 8px;
+      }
+
+      .circle::before {
+        content: '';
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+        transform: rotate(45deg);
+        transition: all 0.6s;
+      }
+
+      .circle::after {
+        content: '';
+        position: absolute;
+        inset: 3px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+        background-size: 200% 200%;
+        z-index: -1;
+        filter: blur(10px);
+        opacity: 0;
+        transition: opacity 0.4s;
+      }
+
+      .circle:hover {
+        transform: translateY(-12px) scale(1.05);
+        box-shadow:
+          0 25px 60px rgba(79, 140, 255, 0.5),
+          0 10px 30px rgba(107, 92, 255, 0.4),
+          inset 0 -5px 30px rgba(255, 255, 255, 0.2);
+        animation:
+          float 6s ease-in-out infinite,
+          pulse-glow 2s ease-in-out infinite;
+        background-position: 100% 50%;
+      }
+
+      .circle:hover::before {
+        left: 100%;
+      }
+
+      .circle:hover::after {
+        opacity: 1;
+        animation: gradient-shift 3s ease infinite;
+      }
+
+      .circle.top {
+        background: linear-gradient(135deg, #f093fb 0%, #f5576c 50%, #ffd140 100%);
+        background-size: 200% 200%;
+        animation-delay: -2s;
+      }
+
+      .circle.top::after {
+        background: linear-gradient(135deg, #f093fb 0%, #f5576c 50%, #ffd140 100%);
+        background-size: 200% 200%;
+      }
+
+      .circle-wrap .bottom .circle:nth-child(1) {
+        animation-delay: -4s;
+        background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+        background-size: 200% 200%;
+      }
+
+      .circle-wrap .bottom .circle:nth-child(1)::after {
+        background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+        background-size: 200% 200%;
+      }
+
+      .circle-wrap .bottom .circle:nth-child(2) {
+        animation-delay: -1s;
+        background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+        background-size: 200% 200%;
+      }
+
+      .circle-wrap .bottom .circle:nth-child(2)::after {
+        background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+        background-size: 200% 200%;
+      }
+
+      @media (max-width: 768px) {
+        .circle {
+          width: 160px;
+          height: 160px;
+          font-size: 16px;
+        }
+
+        .circle-wrap {
+          gap: 30px;
+        }
+
+        .circle-wrap .bottom {
+          gap: 25px;
+        }
+      }
     </style>
   </head>
   <body>
@@ -155,8 +398,25 @@
             data-aos="fade-up"
             data-aos-delay="200"
           >
+            <div style="margin-bottom: 30px">
+              <span
+                style="
+                  display: inline-block;
+                  background: rgba(255, 255, 255, 0.95);
+                  color: #0076ff;
+                  padding: 8px 20px;
+                  border-radius: 25px;
+                  font-size: 14px;
+                  font-weight: 700;
+                  letter-spacing: 1px;
+                  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+                "
+              >
+                <i class="bi bi-people-fill" style="margin-right: 6px"></i>교내 서비스 1위
+              </span>
+            </div>
             <h1>SYU KR SERVICE</h1>
-            <h2>삼육대학교 재학생을 위한 서비스를 제공합니다.</h2>
+            <h2 style="margin-bottom: 20px">학생 생활을 더 편리하게, 한눈에 확인하세요.</h2>
           </div>
           <div class="col-lg-6 order-1 order-lg-2 hero-img" data-aos="zoom-in" data-aos-delay="200">
             <img src="assets/img/banner.png" class="img-fluid animated" alt="" />
@@ -165,7 +425,7 @@
       </div>
     </section>
     <main id="main">
-      <section id="clients" class="clients section-bg">
+      <!-- <section id="clients" class="clients section-bg">
         <div class="container">
           <div class="row" data-aos="zoom-in">
             <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
@@ -188,21 +448,185 @@
             </div>
           </div>
         </div>
-      </section>
-      <section id="about" class="about">
+      </section> -->
+      <!--<section id="about" class="about" style="max-width: 600px; margin: 0 auto;">
         <div class="container" data-aos="fade-up">
           <div class="section-title">
             <h2>About Us</h2>
           </div>
           <div class="row content">
             <div class="section-title pt-4">
-              <h3>사용자 누적 <span id="count"></span> 달성</h3>
+              <h3>누적 사용자 <span id="count" style="font-size: 25pt"></span> 달성</h3>
             </div>
             <div class="section-title pt-4">
               <p>
-                삼육대학교 신/재학생들의 편의를 위한 서비스들을 제공하고 있으며, 서비스들을 통해 학생들의 불편함을 최소화하고 편리함을
-                최대화하기 위해 노력하고 있습니다.
+                신입생, 재학생의 편의를 위해 다양한 서비스를 개발하고 있습니다.
+                학생들이 학교 생활에서 겪는 불편함을 최소화하고,
+                서비스를 통해 더 나은 학교 생활을 할 수 있도록 도와드리겠습니다.
               </p>
+            </div>
+          </div>
+          <div class="row content">
+            <div class="section-title pt-4">
+              <h3>편리함 <span style="font-size: 25pt">최대</span>, 불편함 <span style="font-size: 25pt">최소</span></h3>
+            </div>
+            <div class="section-title pt-4">
+              <p>
+                학생들의 일상에서 발생할 수 있는 불편함을 최소화하고, 더 나은 경험을 제공합니다.
+                언제 어디서나 손쉽게 이용할 수 있는 서비스를 통해 여러분의 학교 생활을 더욱 편리하게 만들어드리겠습니다.
+              </p>
+            </div>
+          </div>
+          <div class="row content">
+            <div class="section-title pt-4">
+              <h3>Since <span style="font-size: 25pt">2023.</span></h3>
+            </div>
+            <div class="section-title pt-4">
+              <div>
+                @0verfl0w767
+              </div>
+              <div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>-->
+      <!-- Chrome Extension Banner -->
+      <section class="chrome-extension-banner">
+        <div class="container" data-aos="fade-up">
+          <div class="chrome-extension-card">
+            <div style="flex: 1; min-width: 280px">
+              <div
+                style="
+                  display: inline-block;
+                  background: linear-gradient(135deg, #4285f4 0%, #34a853 100%);
+                  padding: 8px 16px;
+                  border-radius: 20px;
+                  color: white;
+                  font-weight: 700;
+                  font-size: 0.85rem;
+                  margin-bottom: 15px;
+                "
+              >
+                <i class="bi bi-stars" style="margin-right: 6px"></i>NEW
+              </div>
+              <h3 style="font-weight: 900; font-size: 1.8rem; margin-bottom: 15px; color: #2c3e50">
+                <i class="bi bi-bell-fill" style="color: #4285f4; margin-right: 10px"></i>
+                SYU 공지 알리미
+              </h3>
+              <p style="color: #666; font-size: 1rem; line-height: 1.7; margin-bottom: 0">
+                크롬 브라우저 확장 프로그램으로 학교 공지를 간편하게 확인할 수 있어요!<br />
+              </p>
+            </div>
+            <div style="flex: 0 0 auto">
+              <a
+                href="https://www.syu.kr/notice"
+                target="_blank"
+                style="
+                  display: inline-flex;
+                  align-items: center;
+                  gap: 12px;
+                  background: linear-gradient(135deg, #4285f4 0%, #34a853 100%);
+                  color: white;
+                  padding: 16px 32px;
+                  border-radius: 50px;
+                  text-decoration: none;
+                  font-weight: 700;
+                  font-size: 1.1rem;
+                  box-shadow: 0 8px 25px rgba(66, 133, 244, 0.4);
+                  transition: all 0.3s ease;
+                "
+                onmouseover="
+                  this.style.transform = 'translateY(-3px)'
+                  this.style.boxShadow = '0 12px 35px rgba(66, 133, 244, 0.5)'
+                "
+                onmouseout="
+                  this.style.transform = 'translateY(0)'
+                  this.style.boxShadow = '0 8px 25px rgba(66, 133, 244, 0.4)'
+                "
+              >
+                <i class="bi bi-google" style="font-size: 1.3rem"></i>
+                <span>Chrome에 추가</span>
+                <i class="bi bi-arrow-right-circle-fill" style="font-size: 1.2rem"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="top" class="services section-bg">
+        <div class="container" data-aos="fade-up">
+          <div class="section-title">
+            <h2
+              style="
+                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                background-clip: text;
+                font-weight: 900;
+                font-size: 2.5rem;
+              "
+            >
+              2026 RENEWAL
+            </h2>
+            <p style="font-size: 1.1rem; color: #555; margin-top: 15px">재학생들이 가장 많이 찾는 인기 서비스입니다.</p>
+            <p style="font-size: 1rem; color: #777">클릭하면 바로 이용할 수 있어요.</p>
+          </div>
+          <section class="circle-services">
+            <div class="circle-wrap">
+              <a href="https://sugang.syu.kr/basket" class="circle top" target="_blank">
+                <i class="bi bi-trophy-fill" style="font-size: 32px"></i>
+                <span>수강신청 경쟁률</span>
+              </a>
+              <div class="bottom">
+                <a href="https://sugang.syu.kr/testLogin" class="circle" target="_blank">
+                  <i class="bi bi-cart-plus" style="font-size: 28px"></i>
+                  <span>모의 수강신청</span>
+                </a>
+                <a href="https://lecture.syu.kr/timetable" class="circle" target="_blank">
+                  <i class="bi bi-calendar3" style="font-size: 28px"></i>
+                  <span>시간표 마법사</span>
+                </a>
+              </div>
+            </div>
+          </section>
+        </div>
+      </section>
+      <section id="services" class="services section-bg">
+        <div class="container" data-aos="fade-up">
+          <div class="section-title">
+            <h2>2025 Services</h2>
+            <p>클릭하면 해당 서비스로 이동해요.</p>
+          </div>
+          <div class="row">
+            <div class="col-xl-3 col-md-6 align-items-stretch mt-4" data-aos="zoom-in" data-aos-delay="100">
+              <div class="icon-box">
+                <h4><a href="https://lecture.syu.kr/timetable">시간표 마법사</a></h4>
+                <p>효율적인 학기 계획을 위한 나만의 맞춤형 시간표를 만들어 보세요.</p>
+              </div>
+            </div>
+            <div class="col-xl-3 col-md-6 align-items-stretch mt-4" data-aos="zoom-in" data-aos-delay="100">
+              <div class="icon-box">
+                <h4><a href="https://lecture.syu.kr/liberalarts">교양 과목 조회</a></h4>
+                <p>교양 과목들을 쉽게 한눈에 확인하고, 나만의 시간표를 만들어 보세요.</p>
+              </div>
+            </div>
+            <div class="col-xl-3 col-md-6 align-items-stretch mt-4" data-aos="zoom-in" data-aos-delay="100">
+              <div class="icon-box">
+                <h4><a href="https://lecture.syu.kr/search">학부(과) 과목 조회</a></h4>
+                <p>학부(과) 과목들을 쉽게 한눈에 확인하고, 나만의 시간표를 만들어 보세요.</p>
+              </div>
+            </div>
+            <div class="col-xl-3 col-md-6 align-items-stretch mt-4" data-aos="zoom-in" data-aos-delay="100">
+              <div class="icon-box">
+                <h4><a href="https://lecture.syu.kr/competitionRate">장바구니 경쟁률 현황</a></h4>
+                <p>수강신청에서 장바구니를 담은 인원과 경쟁률을 확인할 수 있어요.</p>
+              </div>
+            </div>
+            <div class="col-xl-3 col-md-6 align-items-stretch mt-4" data-aos="zoom-in" data-aos-delay="100">
+              <div class="icon-box">
+                <h4><a href="https://bus.syu.kr/arrivaltime">셔틀버스 실시간 도착시간</a></h4>
+                <p>셔틀버스 도착 시간을 효율적으로 확인하고, 편리한 이동을 계획하세요.</p>
+              </div>
             </div>
           </div>
         </div>
@@ -210,10 +634,22 @@
       <section id="services" class="services section-bg">
         <div class="container" data-aos="fade-up">
           <div class="section-title">
-            <h2>Services</h2>
-            <p>클릭 시 해당 서비스로 이동합니다.</p>
+            <h2>2023 ~ 2024 Services</h2>
+            <p>클릭하면 해당 서비스로 이동해요.</p>
           </div>
           <div class="row">
+            <div class="col-xl-3 col-md-6 align-items-stretch mt-4" data-aos="zoom-in" data-aos-delay="300">
+              <div class="icon-box">
+                <h4><a href="https://sugang.syu.kr/testLogin">모의 수강신청</a></h4>
+                <p>실제 본 수강신청과 같은 수강신청 시스템을 모의로 체험할 수 있습니다.</p>
+              </div>
+            </div>
+            <div class="col-xl-3 col-md-6 align-items-stretch mt-4" data-aos="zoom-in" data-aos-delay="400">
+              <div class="icon-box">
+                <h4><a href="https://sugang.syu.kr/basket">장바구니 경쟁률 조회</a></h4>
+                <p>본 수강신청 장바구니를 담은 인원, 경쟁률과 순위를 조회할 수 있습니다.</p>
+              </div>
+            </div>
             <div class="col-xl-3 col-md-6 align-items-stretch mt-4" data-aos="zoom-in" data-aos-delay="100">
               <div class="icon-box">
                 <h4><a href="https://lecture.syu.kr">공통(교양) 강의 조회</a></h4>
@@ -224,18 +660,6 @@
               <div class="icon-box">
                 <h4><a href="https://lecture.syu.kr/department">학부(과) 강의 조회</a></h4>
                 <p>학부(과) 강의의 연도별, 학기별, 학과별로 강의 정보를 조회할 수 있습니다.</p>
-              </div>
-            </div>
-            <div class="col-xl-3 col-md-6 align-items-stretch mt-4" data-aos="zoom-in" data-aos-delay="300">
-              <div class="icon-box">
-                <h4><a href="https://sugang.syu.kr/testLogin">모의 수강신청 시스템</a></h4>
-                <p>실제 본 수강신청과 같은 수강신청 시스템을 모의로 체험할 수 있습니다.</p>
-              </div>
-            </div>
-            <div class="col-xl-3 col-md-6 align-items-stretch mt-4" data-aos="zoom-in" data-aos-delay="400">
-              <div class="icon-box">
-                <h4><a href="https://sugang.syu.kr/basket">장바구니 경쟁률 조회</a></h4>
-                <p>본 수강신청 장바구니를 담은 인원, 경쟁률과 순위를 조회할 수 있습니다.</p>
               </div>
             </div>
             <div class="col-xl-3 col-md-6 align-items-stretch mt-4" data-aos="zoom-in" data-aos-delay="500">
@@ -278,24 +702,99 @@
         </div>
       </section>
     </main>
-    <footer>
-      <div class="footer">
-        <div class="flex-1">
-          <span class="logo">© 2024 SYU KR.</span>
+    <footer style="color: #333; padding: 60px 0 0 0">
+      <div class="container">
+        <div class="row" style="padding-bottom: 40px">
+          <!-- 브랜드 섹션 -->
+          <div class="col-lg-4 col-md-6 mb-4 d-none d-lg-block">
+            <h3 style="font-weight: 900; margin-bottom: 20px; font-size: 1.8rem">
+              <i class="bi bi-mortarboard-fill" style="margin-right: 10px"></i>SYU KR
+            </h3>
+            <p style="color: #666; line-height: 1.8; font-size: 0.95rem">
+              삼육대학교 재학생을 위한<br />
+              편리한 서비스를 제공합니다.
+            </p>
+          </div>
+
+          <!-- 퀵 링크 -->
+          <div class="col-lg-4 col-md-6 mb-4 d-none d-lg-block">
+            <h4 style="font-weight: 700; margin-bottom: 20px; font-size: 1.2rem">
+              <i class="bi bi-link-45deg" style="margin-right: 8px"></i>Quick Links
+            </h4>
+            <ul style="list-style: none; padding: 0; margin: 0">
+              <li style="margin-bottom: 12px">
+                <a
+                  href="#hero"
+                  style="color: #666; text-decoration: none; transition: all 0.3s"
+                  onmouseover="
+                    this.style.color = '#0076ff'
+                    this.style.paddingLeft = '5px'
+                  "
+                  onmouseout="
+                    this.style.color = '#666'
+                    this.style.paddingLeft = '0'
+                  "
+                >
+                  <i class="bi bi-chevron-right" style="font-size: 12px"></i> Home
+                </a>
+              </li>
+              <li style="margin-bottom: 12px">
+                <a
+                  href="#about"
+                  style="color: #666; text-decoration: none; transition: all 0.3s"
+                  onmouseover="
+                    this.style.color = '#0076ff'
+                    this.style.paddingLeft = '5px'
+                  "
+                  onmouseout="
+                    this.style.color = '#666'
+                    this.style.paddingLeft = '0'
+                  "
+                >
+                  <i class="bi bi-chevron-right" style="font-size: 12px"></i> About
+                </a>
+              </li>
+              <li style="margin-bottom: 12px">
+                <a
+                  href="#services"
+                  style="color: #666; text-decoration: none; transition: all 0.3s"
+                  onmouseover="
+                    this.style.color = '#0076ff'
+                    this.style.paddingLeft = '5px'
+                  "
+                  onmouseout="
+                    this.style.color = '#666'
+                    this.style.paddingLeft = '0'
+                  "
+                >
+                  <i class="bi bi-chevron-right" style="font-size: 12px"></i> Services
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- 문의 섹션 -->
+          <div class="col-lg-4 col-12 mb-4">
+            <h4 style="font-weight: 700; margin-bottom: 20px; font-size: 1.2rem">
+              <i class="bi bi-envelope-fill" style="margin-right: 8px"></i>Contact
+            </h4>
+            <div style="background: #e9ecef; border: 1px solid #dee2e6; border-radius: 12px; padding: 16px 20px">
+              <p style="margin: 0; color: #666; font-size: 0.85rem; margin-bottom: 8px">서비스 문의 및 제안</p>
+              <a
+                href="mailto:support_team@syu.kr"
+                style="color: #333; text-decoration: none; font-weight: 600; font-size: 1rem; display: flex; align-items: center; gap: 8px"
+              >
+                <i class="bi bi-mailbox" style="font-size: 1.2rem"></i>
+                support_team@syu.kr
+              </a>
+            </div>
+          </div>
         </div>
-        <div class="flex-1">
-          <ul class="flex-2">
-            <li>Home</li>
-            <li>About</li>
-            <li>Services</li>
-          </ul>
-        </div>
-      </div>
-      <div style="text-align: center; font-size: 8pt">해당 사이트는 삼육대학교(학교법인 삼육학원)와 무관한 웹 사이트입니다.</div>
-      <div class="sponsor">
-        <span>Powered by</span>
-        <div class="sponsor-img-cloud">
-          <img src="https://t1.kakaocdn.net/kakaoicloud/portal/images/logo_black_230116.png" width="160" />
+
+        <!-- 하단 구분선 및 저작권 -->
+        <div style="border-top: 1px solid #dee2e6; padding: 25px 0; text-align: center">
+          <p style="margin: 0; color: #666; font-size: 0.9rem; margin-bottom: 10px">© 2023-2026 SYU KR. All rights reserved.</p>
+          <p style="margin: 0; color: #999; font-size: 0.8rem">해당 사이트는 삼육대학교(학교법인 삼육학원)와 무관한 웹 사이트입니다.</p>
         </div>
       </div>
     </footer>
