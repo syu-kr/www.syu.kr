@@ -1,6 +1,13 @@
 {
+  "private": true,
+  "scripts": {
+    "dev": "nuxt dev",
+    "build": "nuxt generate",
+    "preview": "node scripts/serve-static.mjs",
+    "serve": "node scripts/serve-static.mjs",
+    "postinstall": "nuxt prepare"
+  },
   "dependencies": {
-    "express": "^4.18.2",
-    "http": "^0.0.1-security"
+    "nuxt": "^3.21.6"
   }
 }

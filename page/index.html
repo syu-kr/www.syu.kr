@@ -35,20 +35,12 @@
     <link href="assets/vendor/aos/aos.css" rel="stylesheet" />
     <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
     <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet" />
-    <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet" />
-    <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet" />
-    <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet" />
-    <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet" />
 
     <!-- Template Main CSS File -->
     <link href="assets/css/style.css" rel="stylesheet" />
 
     <!-- Vendor JS Files -->
     <script src="assets/vendor/aos/aos.js"></script>
-    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-    <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-    <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
 
     <style>
       @import url(https://cdn.jsdelivr.net/gh/moonspam/NanumSquare@1.0/nanumsquare.css);
@@ -394,7 +386,7 @@
       <div class="container">
         <div class="row">
           <div
-            class="col-lg-6 d-flex flex-column justify-content-center pt-4 pt-lg-0 order-2 order-lg-1"
+            class="col-lg-6 d-flex flex-column justify-content-center pt-4 pt-lg-0 order-2 order-lg-1 hero-copy"
             data-aos="fade-up"
             data-aos-delay="200"
           >
@@ -419,7 +411,27 @@
             <h2 style="margin-bottom: 20px">학생 생활을 더 편리하게, 한눈에 확인하세요.</h2>
           </div>
           <div class="col-lg-6 order-1 order-lg-2 hero-img" data-aos="zoom-in" data-aos-delay="200">
-            <img src="assets/img/banner.png" class="img-fluid animated" alt="" />
+            <div class="hero-scene" data-hero-tilt>
+              <div class="hero-ambient hero-ambient-back"></div>
+              <div class="hero-orb hero-orb-left"></div>
+              <div class="hero-orb hero-orb-right"></div>
+              <div class="hero-ring hero-ring-back"></div>
+              <div class="hero-visual-frame">
+                <div class="hero-stage"></div>
+                <div class="hero-duo" aria-hidden="true">
+                  <div class="hero-character hero-character-left">
+                    <img src="assets/img/banner.png" class="hero-mascot hero-mascot-left" alt="" />
+                  </div>
+                  <div class="hero-character hero-character-right">
+                    <img src="assets/img/banner.png" class="hero-mascot hero-mascot-right" alt="" />
+                  </div>
+                </div>
+              </div>
+              <div class="hero-ring hero-ring-front"></div>
+              <div class="hero-pedestal"></div>
+              <div class="hero-spark hero-spark-one"></div>
+              <div class="hero-spark hero-spark-two"></div>
+            </div>
           </div>
         </div>
       </div>
@@ -553,7 +565,48 @@
           </div>
         </div>
       </section>
-      <section id="top" class="services section-bg">
+      <section class="sutalk-viewer-section">
+        <div class="container" data-aos="fade-up">
+          <div class="sutalk-viewer-card">
+            <div class="row align-items-center gy-5">
+              <div class="col-lg-5">
+                <div class="sutalk-viewer-copy">
+                  <div class="sutalk-viewer-badge"><i class="bi bi-chat-dots-fill"></i> SU-TALK NOTICE VIEWER</div>
+                  <p>수톡 채팅에서의 공지를 웹에서 바로 확인할 수 있도록 담아뒀어요.</p>
+                  <div class="sutalk-viewer-actions">
+                    <a href="https://www.syu.kr/sutalk" target="_blank" class="sutalk-viewer-link">
+                      <i class="bi bi-box-arrow-up-right"></i>
+                      NOTICE VIEWER 열기
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-7">
+                <div class="sutalk-viewer-shell" data-aos="zoom-in" data-aos-delay="120">
+                  <div class="sutalk-viewer-glow sutalk-viewer-glow-one"></div>
+                  <div class="sutalk-viewer-glow sutalk-viewer-glow-two"></div>
+                  <div class="sutalk-phone-frame">
+                    <div class="sutalk-phone-top">
+                      <span class="sutalk-phone-speaker"></span>
+                      <span class="sutalk-phone-camera"></span>
+                    </div>
+                    <div class="sutalk-phone-screen">
+                      <iframe
+                        src="https://www.syu.kr/sutalk"
+                        title="SU-TALK NOTICE VIEWER"
+                        loading="lazy"
+                        referrerpolicy="strict-origin-when-cross-origin"
+                      ></iframe>
+                    </div>
+                    <div class="sutalk-phone-home"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="services" class="services section-bg">
         <div class="container" data-aos="fade-up">
           <div class="section-title">
             <h2
@@ -591,7 +644,7 @@
           </section>
         </div>
       </section>
-      <section id="services" class="services section-bg">
+      <section id="services-2026" class="services section-bg">
         <div class="container" data-aos="fade-up">
           <div class="section-title">
             <h2>2026 Services</h2>
@@ -607,7 +660,7 @@
           </div>
         </div>
       </section>
-      <section id="services" class="services section-bg">
+      <section id="services-2025" class="services section-bg">
         <div class="container" data-aos="fade-up">
           <div class="section-title">
             <h2>2025 Services</h2>
@@ -647,7 +700,7 @@
           </div>
         </div>
       </section>
-      <section id="services" class="services section-bg">
+      <section id="services-2023" class="services section-bg">
         <div class="container" data-aos="fade-up">
           <div class="section-title">
             <h2>2023 ~ 2024 Services</h2>
@@ -817,6 +870,5 @@
       </div>
     </footer>
     <script src="assets/js/main.js"></script>
-    <!-- <script src="assets/js/count.js"></script> -->
   </body>
 </html>

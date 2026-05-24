@@ -166,82 +166,32 @@
   }
 
   /**
-   * Initiate  glightbox 
+   * Hero scene tilt
    */
-  const glightbox = GLightbox({
-    selector: '.glightbox'
-  });
+  const heroScene = select('[data-hero-tilt]')
+  if (heroScene && window.matchMedia('(pointer: fine)').matches) {
+    const resetHeroScene = () => {
+      heroScene.style.setProperty('--hero-rotate-x', '0deg')
+      heroScene.style.setProperty('--hero-rotate-y', '0deg')
+      heroScene.style.setProperty('--hero-shift-x', '0px')
+      heroScene.style.setProperty('--hero-shift-y', '0px')
+    }
 
-  /**
-   * Skills animation
-   */
-  let skilsContent = select('.skills-content');
-  if (skilsContent) {
-    new Waypoint({
-      element: skilsContent,
-      offset: '80%',
-      handler: function(direction) {
-        let progress = select('.progress .progress-bar', true);
-        progress.forEach((el) => {
-          el.style.width = el.getAttribute('aria-valuenow') + '%'
-        });
-      }
-    })
+    const updateHeroScene = (event) => {
+      const bounds = heroScene.getBoundingClientRect()
+      const relativeX = ((event.clientX - bounds.left) / bounds.width) * 2 - 1
+      const relativeY = ((event.clientY - bounds.top) / bounds.height) * 2 - 1
+
+      heroScene.style.setProperty('--hero-rotate-x', `${(-relativeY * 7).toFixed(2)}deg`)
+      heroScene.style.setProperty('--hero-rotate-y', `${(relativeX * 9).toFixed(2)}deg`)
+      heroScene.style.setProperty('--hero-shift-x', `${(relativeX * 18).toFixed(1)}px`)
+      heroScene.style.setProperty('--hero-shift-y', `${(relativeY * 14).toFixed(1)}px`)
+    }
+
+    heroScene.addEventListener('pointermove', updateHeroScene)
+    heroScene.addEventListener('pointerleave', resetHeroScene)
+    window.addEventListener('blur', resetHeroScene)
   }
-
-  /**
-   * Porfolio isotope and filter
-   */
-  window.addEventListener('load', () => {
-    let portfolioContainer = select('.portfolio-container');
-    if (portfolioContainer) {
-      let portfolioIsotope = new Isotope(portfolioContainer, {
-        itemSelector: '.portfolio-item'
-      });
-
-      let portfolioFilters = select('#portfolio-flters li', true);
-
-      on('click', '#portfolio-flters li', function(e) {
-        e.preventDefault();
-        portfolioFilters.forEach(function(el) {
-          el.classList.remove('filter-active');
-        });
-        this.classList.add('filter-active');
-
-        portfolioIsotope.arrange({
-          filter: this.getAttribute('data-filter')
-        });
-        portfolioIsotope.on('arrangeComplete', function() {
-          AOS.refresh()
-        });
-      }, true);
-    }
-
-  });
-
-  /**
-   * Initiate portfolio lightbox 
-   */
-  const portfolioLightbox = GLightbox({
-    selector: '.portfolio-lightbox'
-  });
-
-  /**
-   * Portfolio details slider
-   */
-  new Swiper('.portfolio-details-slider', {
-    speed: 400,
-    loop: true,
-    autoplay: {
-      delay: 5000,
-      disableOnInteraction: false
-    },
-    pagination: {
-      el: '.swiper-pagination',
-      type: 'bullets',
-      clickable: true
-    }
-  });
 
   /**
    * Animation on scroll
