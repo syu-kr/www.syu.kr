@@ -16,6 +16,11 @@ const inlineStyles = Array.from(legacyDocument.matchAll(/<style>([\s\S]*?)<\/sty
 
 const topServices = [
   {
+    name: '한끼 · 삼육대학교 후문',
+    description: '삼육대학교 후문 근처 음식점을 가까운 순으로 넘겨보는 맛집 큐레이션',
+    url: 'https://food.syu.kr/',
+  },
+  {
     name: '시간표 마법사',
     description: '효율적인 학기 계획을 위한 맞춤형 시간표 서비스',
     url: 'https://lecture.syu.kr/timetable',

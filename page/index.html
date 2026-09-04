@@ -125,243 +125,444 @@
         word-break: keep-all;
       }
 
-      .chrome-extension-banner {
-        padding: 100px 0;
-        /* background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 50%, #90caf9 100%); */
+      /* Banner Cards (한끼 & Chrome 확장 프로그램) */
+      .food-service-banner {
+        padding: 50px 0 10px;
         position: relative;
-        overflow: hidden;
       }
 
-      /* .chrome-extension-banner::before {
-        content: '';
-        position: absolute;
-        top: -50%;
-        left: -50%;
-        width: 200%;
-        height: 200%;
-        background: radial-gradient(circle, rgba(0, 118, 255, 0.1) 0%, transparent 70%);
-        animation: rotate-gradient 20s linear infinite;
-        pointer-events: none;
-      } */
-
-      @keyframes rotate-gradient {
-        0% {
-          transform: rotate(0deg);
-        }
-        100% {
-          transform: rotate(360deg);
-        }
+      .chrome-extension-banner {
+        padding: 10px 0 50px;
+        position: relative;
       }
 
+      .food-service-card,
       .chrome-extension-card {
-        background: white;
+        background: #ffffff;
         border-radius: 20px;
-        padding: 40px;
-        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+        padding: 28px 36px;
+        border: 1px solid #e2e8f0;
+        box-shadow: none !important;
         display: flex;
         align-items: center;
-        gap: 30px;
+        justify-content: space-between;
+        gap: 24px;
         flex-wrap: wrap;
-        position: relative;
-        z-index: 1;
+        box-sizing: border-box;
+      }
+
+      .food-service-icon-box,
+      .chrome-service-icon-box {
+        width: 56px;
+        height: 56px;
+        border-radius: 16px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        box-shadow: none !important;
+      }
+
+      .food-service-icon-box {
+        background-color: #f4f0e7;
+        border: 1px solid rgba(23, 23, 19, 0.08);
+      }
+
+      .chrome-service-icon-box {
+        background-color: #eff6ff;
+        border: 1px solid rgba(26, 115, 232, 0.12);
+        color: #1a73e8;
+        font-size: 26px;
+      }
+
+      .food-service-btn,
+      .chrome-extension-btn {
+        width: 230px;
+        height: 52px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        border-radius: 50px;
+        text-decoration: none !important;
+        font-weight: 700;
+        font-size: 1.05rem;
+        box-sizing: border-box;
+        box-shadow: none !important;
+        transition: background-color 0.2s ease, transform 0.2s ease;
+      }
+
+      .food-service-btn {
+        background-color: #ea580c;
+        color: #ffffff !important;
+      }
+
+      .food-service-btn:hover {
+        transform: translateY(-2px);
+        background-color: #c2410c;
+        box-shadow: none !important;
+        color: #ffffff !important;
+      }
+
+      .chrome-extension-btn {
+        background-color: #1a73e8;
+        color: #ffffff !important;
+      }
+
+      .chrome-extension-btn:hover {
+        transform: translateY(-2px);
+        background-color: #1557b0;
+        box-shadow: none !important;
+        color: #ffffff !important;
+      }
+
+      .food-badge-new {
+        display: inline-flex;
+        align-items: center;
+        padding: 3px 9px;
+        background: #ea580c;
+        color: #ffffff;
+        font-size: 0.72rem;
+        font-weight: 800;
+        letter-spacing: 0.05em;
+        border-radius: 9999px;
+        line-height: 1.3;
+      }
+
+      /* Footer Styles */
+      .site-footer {
+        padding: 38px 0;
+        background: #ffffff;
+        border-top: 1px solid #e2e8f0;
+        text-align: center;
+      }
+
+      .site-footer .footer-copyright {
+        margin: 0 0 7px;
+        color: #64748b;
+        font-size: 0.88rem;
+      }
+
+      .site-footer .footer-disclaimer {
+        margin: 0 0 7px;
+        color: #94a3b8;
+        font-size: 0.8rem;
+      }
+
+      .site-footer .footer-contact {
+        margin: 0;
+        font-size: 0.78rem;
+        color: #94a3b8;
+      }
+
+      .site-footer .footer-contact a {
+        color: #64748b;
+        text-decoration: none;
+        transition: color 0.2s ease;
+      }
+
+      .site-footer .footer-contact a:hover {
+        color: #2563eb;
       }
 
       @media (max-width: 768px) {
-        .chrome-extension-banner {
-          padding: 60px 0;
+        .food-service-banner {
+          padding: 35px 0 10px;
         }
 
+        .chrome-extension-banner {
+          padding: 10px 0 35px;
+        }
+
+        .food-service-card,
         .chrome-extension-card {
-          padding: 30px 20px;
+          padding: 24px 20px;
           text-align: center;
           justify-content: center;
         }
 
+        .food-service-card > div:first-child,
+        .chrome-extension-card > div:first-child {
+          flex-direction: column;
+          text-align: center;
+          gap: 14px !important;
+          align-items: center;
+        }
+
+        .food-service-card .food-title-wrap,
+        .chrome-extension-card .chrome-title-wrap {
+          justify-content: center;
+        }
+
+        .food-service-card > div:last-child,
         .chrome-extension-card > div:last-child {
           width: 100%;
         }
 
-        .chrome-extension-card a {
+        .food-service-btn,
+        .chrome-extension-btn {
           width: 100% !important;
           justify-content: center !important;
+        }
+
+        .site-footer {
+          padding: 24px 16px;
+        }
+
+        .site-footer .footer-copyright {
+          font-size: 0.72rem;
+          margin-bottom: 4px;
+          line-height: 1.4;
+        }
+
+        .site-footer .footer-disclaimer {
+          font-size: 0.65rem;
+          margin-bottom: 4px;
+          line-height: 1.4;
+          word-break: keep-all;
+        }
+
+        .site-footer .footer-contact {
+          font-size: 0.65rem;
+          line-height: 1.4;
         }
       }
     </style>
     <style>
-      @keyframes float {
-        0%,
-        100% {
-          transform: translateY(0px);
-        }
-        50% {
-          transform: translateY(-15px);
-        }
-      }
-
-      @keyframes pulse-glow {
-        0%,
-        100% {
-          box-shadow:
-            0 0 30px rgba(79, 140, 255, 0.4),
-            0 10px 40px rgba(107, 92, 255, 0.3);
-        }
-        50% {
-          box-shadow:
-            0 0 50px rgba(79, 140, 255, 0.6),
-            0 15px 60px rgba(107, 92, 255, 0.5);
-        }
-      }
-
-      @keyframes gradient-shift {
-        0% {
-          background-position: 0% 50%;
-        }
-        50% {
-          background-position: 100% 50%;
-        }
-        100% {
-          background-position: 0% 50%;
-        }
-      }
-
-      .circle-services {
-        display: flex;
-        justify-content: center;
-        padding: 40px 20px;
-        background: linear-gradient(180deg, rgba(79, 140, 255, 0.03) 0%, rgba(107, 92, 255, 0.05) 100%);
-        border-radius: 20px;
-      }
-
-      .circle-wrap {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 50px;
-      }
-
-      .circle-wrap .bottom {
-        display: flex;
-        gap: 50px;
-      }
-
-      .circle {
+      /* Bento Grid Section Styles */
+      .bento-section {
+        padding: 90px 0 110px;
+        background: linear-gradient(180deg, #f8fafc 0%, #f1f5f9 100%);
         position: relative;
-        width: 240px;
-        height: 240px;
-        border-radius: 50%;
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
-        background-size: 200% 200%;
-        color: #fff;
+      }
+
+      .bento-header {
+        text-align: center;
+        max-width: 720px;
+        margin: 0 auto 50px;
+      }
+
+
+      .bento-header h2 {
+        font-size: 2.3rem;
+        font-weight: 900;
+        color: #0f172a;
+        letter-spacing: -0.02em;
+        margin-bottom: 14px;
+        font-family: 'NanumSquare', 'Pretendard', sans-serif;
+      }
+
+      .bento-header p {
+        font-size: 1.05rem;
+        color: #64748b;
+        line-height: 1.6;
+        margin-bottom: 0;
+      }
+
+      .bento-category-title {
+        font-size: 1.45rem;
         font-weight: 800;
-        font-size: 22px;
+        color: #0f172a;
+        margin: 42px 0 20px;
+        letter-spacing: -0.02em;
+        font-family: 'NanumSquare', 'Pretendard', sans-serif;
+      }
+
+      .bento-category-title:first-of-type {
+        margin-top: 10px;
+      }
+
+      /* Bento Card Common */
+      .bento-card {
         display: flex;
         flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-        text-decoration: none;
-        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-        box-shadow:
-          0 15px 40px rgba(79, 140, 255, 0.3),
-          0 5px 15px rgba(107, 92, 255, 0.2),
-          inset 0 -5px 20px rgba(255, 255, 255, 0.1);
-        animation: float 6s ease-in-out infinite;
+        justify-content: space-between;
+        background: #ffffff;
+        border-radius: 20px;
+        border: 1px solid rgba(226, 232, 240, 0.9);
+        text-decoration: none !important;
+        position: relative;
         overflow: hidden;
-        gap: 8px;
+        transition: all 0.35s cubic-bezier(0.2, 0.8, 0.2, 1);
+        box-shadow: 0 4px 16px -2px rgba(15, 23, 42, 0.04), 0 2px 6px -1px rgba(15, 23, 42, 0.02);
       }
 
-      .circle::before {
-        content: '';
-        position: absolute;
-        top: -50%;
-        left: -50%;
-        width: 200%;
-        height: 200%;
-        background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
-        transform: rotate(45deg);
-        transition: all 0.6s;
+      .bento-card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 20px 35px -8px rgba(37, 99, 235, 0.12), 0 10px 18px -4px rgba(15, 23, 42, 0.06);
+        border-color: rgba(99, 102, 241, 0.35);
       }
 
-      .circle::after {
-        content: '';
-        position: absolute;
-        inset: 3px;
+      .bento-card-top {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 20px;
+      }
+
+      .bento-icon {
+        width: 48px;
+        height: 48px;
+        border-radius: 14px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 22px;
+        transition: transform 0.3s ease;
+      }
+
+      .bento-card:hover .bento-icon {
+        transform: scale(1.08);
+      }
+
+      .bento-card-arrow {
+        width: 34px;
+        height: 34px;
         border-radius: 50%;
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
-        background-size: 200% 200%;
-        z-index: -1;
-        filter: blur(10px);
-        opacity: 0;
-        transition: opacity 0.4s;
+        background: #f8fafc;
+        border: 1px solid #e2e8f0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #94a3b8;
+        font-size: 14px;
+        transition: all 0.3s ease;
       }
 
-      .circle:hover {
-        transform: translateY(-12px) scale(1.05);
-        box-shadow:
-          0 25px 60px rgba(79, 140, 255, 0.5),
-          0 10px 30px rgba(107, 92, 255, 0.4),
-          inset 0 -5px 30px rgba(255, 255, 255, 0.2);
-        animation:
-          float 6s ease-in-out infinite,
-          pulse-glow 2s ease-in-out infinite;
-        background-position: 100% 50%;
+      .bento-card:hover .bento-card-arrow {
+        background: #2563eb;
+        border-color: #2563eb;
+        color: #ffffff;
+        transform: translate(2px, -2px);
       }
 
-      .circle:hover::before {
-        left: 100%;
+
+      .bento-card-body h3,
+      .bento-card-body h4 {
+        color: #0f172a;
+        font-weight: 800;
+        letter-spacing: -0.01em;
+        margin-bottom: 8px;
+        font-family: 'NanumSquare', 'Pretendard', sans-serif;
+        transition: color 0.2s ease;
       }
 
-      .circle:hover::after {
-        opacity: 1;
-        animation: gradient-shift 3s ease infinite;
+      .bento-card:hover .bento-card-body h3,
+      .bento-card:hover .bento-card-body h4 {
+        color: #2563eb;
       }
 
-      .circle.top {
-        background: linear-gradient(135deg, #f093fb 0%, #f5576c 50%, #ffd140 100%);
-        background-size: 200% 200%;
-        animation-delay: -2s;
+      .bento-card-body p {
+        color: #64748b;
+        font-size: 0.92rem;
+        line-height: 1.55;
+        margin-bottom: 0;
       }
 
-      .circle.top::after {
-        background: linear-gradient(135deg, #f093fb 0%, #f5576c 50%, #ffd140 100%);
-        background-size: 200% 200%;
+      /* Featured Cards (Top 3) */
+      .bento-card-featured {
+        padding: 32px 28px 28px;
+        min-height: 240px;
       }
 
-      .circle-wrap .bottom .circle:nth-child(1) {
-        animation-delay: -4s;
-        background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
-        background-size: 200% 200%;
+      .bento-card-featured .bento-icon {
+        width: 56px;
+        height: 56px;
+        font-size: 26px;
+        border-radius: 16px;
       }
 
-      .circle-wrap .bottom .circle:nth-child(1)::after {
-        background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
-        background-size: 200% 200%;
+      .bento-card-featured .bento-card-body h3 {
+        font-size: 1.35rem;
+        margin-bottom: 10px;
       }
 
-      .circle-wrap .bottom .circle:nth-child(2) {
-        animation-delay: -1s;
-        background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
-        background-size: 200% 200%;
+      .bento-card-featured .bento-card-body p {
+        font-size: 0.96rem;
       }
 
-      .circle-wrap .bottom .circle:nth-child(2)::after {
-        background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
-        background-size: 200% 200%;
+      .bento-card-featured .bento-card-footer {
+        margin-top: 24px;
+        padding-top: 16px;
+        border-top: 1px solid rgba(226, 232, 240, 0.7);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        color: #2563eb;
+        font-size: 0.88rem;
+        font-weight: 700;
       }
 
-      @media (max-width: 768px) {
-        .circle {
-          width: 160px;
-          height: 160px;
-          font-size: 16px;
+      .bento-card-featured .bento-card-footer i {
+        transition: transform 0.25s ease;
+      }
+
+      .bento-card:hover .bento-card-footer i {
+        transform: translateX(4px);
+      }
+
+      /* Sub Cards (8 Items) */
+      .bento-card-sub {
+        padding: 24px 20px;
+        height: 100%;
+        min-height: 190px;
+      }
+
+      .bento-card-sub .bento-card-body h4 {
+        font-size: 1.1rem;
+      }
+
+      .bento-card-sub .bento-card-body p {
+        font-size: 0.86rem;
+      }
+
+      /* Icon Color Presets */
+      .icon-blue {
+        background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+        color: #2563eb;
+      }
+      .icon-purple {
+        background: linear-gradient(135deg, #faf5ff 0%, #f3e8ff 100%);
+        color: #7c3aed;
+      }
+      .icon-emerald {
+        background: linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%);
+        color: #059669;
+      }
+      .icon-amber {
+        background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%);
+        color: #d97706;
+      }
+      .icon-rose {
+        background: linear-gradient(135deg, #fff1f2 0%, #ffe4e6 100%);
+        color: #e11d48;
+      }
+      .icon-indigo {
+        background: linear-gradient(135deg, #eef2ff 0%, #e0e7ff 100%);
+        color: #4f46e5;
+      }
+      .icon-cyan {
+        background: linear-gradient(135deg, #ecfeff 0%, #cffafe 100%);
+        color: #0891b2;
+      }
+      .icon-slate {
+        background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+        color: #334155;
+      }
+
+      @media (max-width: 991px) {
+        .bento-section {
+          padding: 60px 0 80px;
         }
-
-        .circle-wrap {
-          gap: 30px;
+        .bento-header h2 {
+          font-size: 1.85rem;
         }
-
-        .circle-wrap .bottom {
-          gap: 25px;
+        .bento-category-title {
+          font-size: 1.3rem;
+        }
+        .bento-card-featured {
+          min-height: auto;
+          margin-bottom: 16px;
         }
       }
     </style>
@@ -390,25 +591,13 @@
             data-aos="fade-up"
             data-aos-delay="200"
           >
-            <div style="margin-bottom: 30px">
-              <span
-                style="
-                  display: inline-block;
-                  background: rgba(255, 255, 255, 0.95);
-                  color: #0076ff;
-                  padding: 8px 20px;
-                  border-radius: 25px;
-                  font-size: 14px;
-                  font-weight: 700;
-                  letter-spacing: 1px;
-                  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
-                "
-              >
-                <i class="bi bi-people-fill" style="margin-right: 6px"></i>교내 서비스 1위
-              </span>
+            <div class="hero-stat-badge">
+              <span>SINCE 2023</span>
+              <span class="stat-divider" aria-hidden="true"></span>
+              <span>60K+</span>
             </div>
             <h1>SYU KR SERVICE</h1>
-            <h2 style="margin-bottom: 20px">학생 생활을 더 편리하게, 한눈에 확인하세요.</h2>
+            <h2>학생 생활을 더 편리하게, 한눈에 확인하세요.</h2>
           </div>
           <div class="col-lg-6 order-1 order-lg-2 hero-img" data-aos="zoom-in" data-aos-delay="200">
             <div class="hero-scene" data-hero-tilt>
@@ -503,370 +692,396 @@
           </div>
         </div>
       </section>-->
+      <!-- Food Service Banner (한끼 · 삼육대학교 후문) -->
+      <section class="food-service-banner">
+        <div class="container" data-aos="fade-up">
+          <div class="food-service-card">
+            <div style="display: flex; align-items: center; gap: 20px; flex: 1; min-width: 280px;">
+              <div class="food-service-icon-box">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="40" height="40" aria-hidden="true">
+                  <path d="M10 35h44c0 13-8.8 22-22 22S10 48 10 35Z" fill="#171713"/>
+                  <path d="M13 35c1.6-8.2 8.8-13 19-13s17.4 4.8 19 13H13Z" fill="#f4f0e7" stroke="#171713" stroke-width="3.5" stroke-linejoin="round"/>
+                  <path d="M32 7c-7.4 0-12 5.3-12 11.8C20 28.2 32 39 32 39s12-10.8 12-20.2C44 12.3 39.4 7 32 7Z" fill="#c9fa64" stroke="#171713" stroke-width="3.5" stroke-linejoin="round"/>
+                  <circle cx="32" cy="19" r="4.5" fill="#171713"/>
+                </svg>
+              </div>
+              <div>
+                <div class="food-title-wrap" style="display: flex; align-items: center; gap: 10px; margin-bottom: 6px; flex-wrap: wrap;">
+                  <span class="food-badge-new">NEW</span>
+                  <h3 style="font-weight: 900; font-size: 1.65rem; margin: 0; color: #1e293b; font-family: 'NanumSquare', 'Pretendard', sans-serif;">
+                    한끼 · 삼육대학교 후문
+                  </h3>
+                </div>
+                <p style="color: #64748b; font-size: 0.98rem; line-height: 1.5; margin-bottom: 0;">
+                  삼육대학교 후문 근처 음식점과 카페를 가까운 순으로 넘겨보는 맛집 큐레이션
+                </p>
+              </div>
+            </div>
+            <div style="flex: 0 0 auto;">
+              <a
+                href="https://food.syu.kr/"
+                target="_blank"
+                class="food-service-btn"
+              >
+                <span>후문 맛집 둘러보기</span>
+                <i class="bi bi-arrow-right-circle-fill" style="font-size: 1.15rem; margin-left: 2px;"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
       <!-- Chrome Extension Banner -->
       <section class="chrome-extension-banner">
         <div class="container" data-aos="fade-up">
           <div class="chrome-extension-card">
-            <div style="flex: 1; min-width: 280px">
-              <div
-                style="
-                  display: inline-block;
-                  background: linear-gradient(135deg, #4285f4 0%, #34a853 100%);
-                  padding: 8px 16px;
-                  border-radius: 20px;
-                  color: white;
-                  font-weight: 700;
-                  font-size: 0.85rem;
-                  margin-bottom: 15px;
-                "
-              >
-                <i class="bi bi-stars" style="margin-right: 6px"></i>NEW
+            <div style="display: flex; align-items: center; gap: 20px; flex: 1; min-width: 280px;">
+              <div class="chrome-service-icon-box">
+                <i class="bi bi-bell-fill"></i>
               </div>
-              <h3 style="font-weight: 900; font-size: 1.8rem; margin-bottom: 15px; color: #2c3e50">
-                <i class="bi bi-bell-fill" style="color: #4285f4; margin-right: 10px"></i>
-                SYU 공지 알리미
-              </h3>
-              <p style="color: #666; font-size: 1rem; line-height: 1.7; margin-bottom: 0">
-                크롬 브라우저 확장 프로그램으로 학교 공지를 간편하게 확인할 수 있어요!<br />
-              </p>
+              <div>
+                <div class="chrome-title-wrap" style="display: flex; align-items: center; gap: 10px; margin-bottom: 6px; flex-wrap: wrap;">
+                  <h3 style="font-weight: 900; font-size: 1.65rem; margin: 0; color: #1e293b; font-family: 'NanumSquare', 'Pretendard', sans-serif;">
+                    SYU 공지 알리미
+                  </h3>
+                </div>
+                <p style="color: #64748b; font-size: 0.98rem; line-height: 1.5; margin-bottom: 0;">
+                  크롬 브라우저 확장 프로그램으로 학교 공지를 간편하게 확인할 수 있어요!
+                </p>
+              </div>
             </div>
-            <div style="flex: 0 0 auto">
+            <div style="flex: 0 0 auto;">
               <a
                 href="https://www.syu.kr/notice"
                 target="_blank"
-                style="
-                  display: inline-flex;
-                  align-items: center;
-                  gap: 12px;
-                  background: linear-gradient(135deg, #4285f4 0%, #34a853 100%);
-                  color: white;
-                  padding: 16px 32px;
-                  border-radius: 50px;
-                  text-decoration: none;
-                  font-weight: 700;
-                  font-size: 1.1rem;
-                  box-shadow: 0 8px 25px rgba(66, 133, 244, 0.4);
-                  transition: all 0.3s ease;
-                "
-                onmouseover="
-                  this.style.transform = 'translateY(-3px)'
-                  this.style.boxShadow = '0 12px 35px rgba(66, 133, 244, 0.5)'
-                "
-                onmouseout="
-                  this.style.transform = 'translateY(0)'
-                  this.style.boxShadow = '0 8px 25px rgba(66, 133, 244, 0.4)'
-                "
+                class="chrome-extension-btn"
               >
-                <i class="bi bi-google" style="font-size: 1.3rem"></i>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="22" height="22" style="flex-shrink: 0;" aria-hidden="true">
+                  <circle cx="24" cy="24" r="12" fill="#fff"/>
+                  <path d="M24 12h20.78a24 24 0 0 0-41.56 0L13.61 30A12 12 0 0 1 24 12z" fill="#ea4335"/>
+                  <path d="M34.39 30L24 48a24 24 0 0 0 20.78-36H24a12 12 0 0 1 10.39 18z" fill="#fbbc04"/>
+                  <path d="M13.61 30L3.22 12A24 24 0 0 0 24 48l10.39-18a12 12 0 0 1-20.78 0z" fill="#34a853"/>
+                  <circle cx="24" cy="24" r="12" fill="#fff"/>
+                  <circle cx="24" cy="24" r="9.5" fill="#1a73e8"/>
+                </svg>
                 <span>Chrome에 추가</span>
-                <i class="bi bi-arrow-right-circle-fill" style="font-size: 1.2rem"></i>
+                <i class="bi bi-arrow-right-circle-fill" style="font-size: 1.15rem; margin-left: 2px;"></i>
               </a>
             </div>
           </div>
         </div>
       </section>
-      <section class="sutalk-viewer-section">
+      <section id="services" class="bento-section">
         <div class="container" data-aos="fade-up">
-          <div class="sutalk-viewer-card">
-            <div class="row align-items-center gy-5">
-              <div class="col-lg-5">
-                <div class="sutalk-viewer-copy">
-                  <div class="sutalk-viewer-badge"><i class="bi bi-chat-dots-fill"></i> SU-TALK NOTICE VIEWER</div>
-                  <p>수톡 채팅에서의 공지를 웹에서 바로 확인할 수 있도록 담아뒀어요.</p>
-                  <div class="sutalk-viewer-actions">
-                    <a href="https://www.syu.kr/sutalk" target="_blank" class="sutalk-viewer-link">
-                      <i class="bi bi-box-arrow-up-right"></i>
-                      NOTICE VIEWER 열기
-                    </a>
+          <div class="bento-header">
+            <h2>삼육대학교 재학생 서비스</h2>
+            <p>수강신청부터 시간표, 실시간 셔틀버스, 열람실 좌석까지 캠퍼스 생활에 필요한 서비스를 한눈에 확인하세요.</p>
+          </div>
+
+          <!-- Category 1: 셔틀버스 운행 서비스 -->
+          <h3 class="bento-category-title">셔틀버스 운행 서비스</h3>
+          <div class="row g-4 mb-5">
+            <!-- 셔틀버스 실시간 위치 -->
+            <div class="col-xl-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
+              <a href="https://bus.syu.kr/" target="_blank" class="bento-card bento-card-sub">
+                <div>
+                  <div class="bento-card-top">
+                    <div class="bento-icon icon-cyan">
+                      <i class="bi bi-geo-alt-fill"></i>
+                    </div>
+                    <div class="bento-card-arrow"><i class="bi bi-arrow-up-right"></i></div>
+                  </div>
+                  <div class="bento-card-body">
+                    <h4>셔틀버스 실시간 위치</h4>
+                    <p>지도 위에서 실시간으로 운행 중인 교내 셔틀버스의 현재 주행 위치를 확인하세요.</p>
                   </div>
                 </div>
-              </div>
-              <div class="col-lg-7">
-                <div class="sutalk-viewer-shell" data-aos="zoom-in" data-aos-delay="120">
-                  <div class="sutalk-viewer-glow sutalk-viewer-glow-one"></div>
-                  <div class="sutalk-viewer-glow sutalk-viewer-glow-two"></div>
-                  <div class="sutalk-phone-frame">
-                    <div class="sutalk-phone-top">
-                      <span class="sutalk-phone-speaker"></span>
-                      <span class="sutalk-phone-camera"></span>
-                    </div>
-                    <div class="sutalk-phone-screen">
-                      <iframe
-                        src="https://www.syu.kr/sutalk"
-                        title="SU-TALK NOTICE VIEWER"
-                        loading="lazy"
-                        referrerpolicy="strict-origin-when-cross-origin"
-                      ></iframe>
-                    </div>
-                    <div class="sutalk-phone-home"></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section id="services" class="services section-bg">
-        <div class="container" data-aos="fade-up">
-          <div class="section-title">
-            <h2
-              style="
-                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-                -webkit-background-clip: text;
-                -webkit-text-fill-color: transparent;
-                background-clip: text;
-                font-weight: 900;
-                font-size: 2.5rem;
-              "
-            >
-              2026 RENEWAL
-            </h2>
-            <p style="font-size: 1.1rem; color: #555; margin-top: 15px">재학생들이 가장 많이 찾는 인기 서비스입니다.</p>
-            <p style="font-size: 1rem; color: #777">클릭하면 바로 이용할 수 있어요.</p>
-          </div>
-          <section class="circle-services">
-            <div class="circle-wrap">
-              <a href="https://sugang.syu.kr/basket" class="circle top" target="_blank">
-                <i class="bi bi-trophy-fill" style="font-size: 32px"></i>
-                <span>수강신청 경쟁률</span>
               </a>
-              <div class="bottom">
-                <a href="https://sugang.syu.kr/testLogin" class="circle" target="_blank">
-                  <i class="bi bi-cart-plus" style="font-size: 28px"></i>
-                  <span>모의 수강신청</span>
-                </a>
-                <a href="https://lecture.syu.kr/timetable" class="circle" target="_blank">
-                  <i class="bi bi-calendar3" style="font-size: 28px"></i>
-                  <span>시간표 마법사</span>
-                </a>
-              </div>
             </div>
-          </section>
-        </div>
-      </section>
-      <section id="services-2026" class="services section-bg">
-        <div class="container" data-aos="fade-up">
-          <div class="section-title">
-            <h2>2026 Services</h2>
-            <p>클릭하면 해당 서비스로 이동해요.</p>
-          </div>
-          <div class="row">
-            <div class="col-12 align-items-stretch mt-4" data-aos="zoom-in" data-aos-delay="100">
-              <div class="icon-box">
-                <h4><a href="https://library.syu.kr/study">집중 열람실 좌석 현황</a></h4>
-                <p>도서관 3층 집중 열람실 좌석의 사용 가능 현황을 확인할 수 있어요.</p>
-              </div>
+
+            <!-- 셔틀버스 노선도 뷰 -->
+            <div class="col-xl-3 col-md-6" data-aos="fade-up" data-aos-delay="150">
+              <a href="https://bus.syu.kr/bus" target="_blank" class="bento-card bento-card-sub">
+                <div>
+                  <div class="bento-card-top">
+                    <div class="bento-icon icon-blue">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M4 17L9 12H15L20 7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M9 6V12" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
+                        <path d="M15 12V18" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
+                        <circle cx="4" cy="17" r="2" fill="#ffffff" stroke="currentColor" stroke-width="1.8"/>
+                        <circle cx="9" cy="6" r="2" fill="#ffffff" stroke="currentColor" stroke-width="1.8"/>
+                        <circle cx="9" cy="12" r="2.8" fill="#ffffff" stroke="currentColor" stroke-width="2"/>
+                        <circle cx="15" cy="12" r="2.8" fill="#ffffff" stroke="currentColor" stroke-width="2"/>
+                        <circle cx="15" cy="18" r="2" fill="#ffffff" stroke="currentColor" stroke-width="1.8"/>
+                        <circle cx="20" cy="7" r="2" fill="#ffffff" stroke="currentColor" stroke-width="1.8"/>
+                      </svg>
+                    </div>
+                    <div class="bento-card-arrow"><i class="bi bi-arrow-up-right"></i></div>
+                  </div>
+                  <div class="bento-card-body">
+                    <h4>셔틀버스 노선도 뷰</h4>
+                    <p>학교 ↔ 태릉입구 ↔ 석계역 전용 노선도로 각 정류장별 버스 위치와 운행 현황을 확인하세요.</p>
+                  </div>
+                </div>
+              </a>
             </div>
-          </div>
-        </div>
-      </section>
-      <section id="services-2025" class="services section-bg">
-        <div class="container" data-aos="fade-up">
-          <div class="section-title">
-            <h2>2025 Services</h2>
-            <p>클릭하면 해당 서비스로 이동해요.</p>
-          </div>
-          <div class="row">
-            <div class="col-xl-3 col-md-6 align-items-stretch mt-4" data-aos="zoom-in" data-aos-delay="100">
-              <div class="icon-box">
-                <h4><a href="https://lecture.syu.kr/timetable">시간표 마법사</a></h4>
-                <p>효율적인 학기 계획을 위한 나만의 맞춤형 시간표를 만들어 보세요.</p>
-              </div>
+
+            <!-- 셔틀버스 도착시간 -->
+            <div class="col-xl-3 col-md-6" data-aos="fade-up" data-aos-delay="200">
+              <a href="https://bus.syu.kr/arrivalTime" target="_blank" class="bento-card bento-card-sub">
+                <div>
+                  <div class="bento-card-top">
+                    <div class="bento-icon icon-emerald">
+                      <i class="bi bi-clock-history"></i>
+                    </div>
+                    <div class="bento-card-arrow"><i class="bi bi-arrow-up-right"></i></div>
+                  </div>
+                  <div class="bento-card-body">
+                    <h4>셔틀버스 도착시간</h4>
+                    <p>화랑대·태릉입구·석계·별내역 셔틀버스의 실시간 도착 예정 시간과 운행 정보를 확인하세요.</p>
+                  </div>
+                </div>
+              </a>
             </div>
-            <div class="col-xl-3 col-md-6 align-items-stretch mt-4" data-aos="zoom-in" data-aos-delay="100">
-              <div class="icon-box">
-                <h4><a href="https://lecture.syu.kr/liberalarts">교양 과목 조회</a></h4>
-                <p>교양 과목들을 쉽게 한눈에 확인하고, 나만의 시간표를 만들어 보세요.</p>
-              </div>
-            </div>
-            <div class="col-xl-3 col-md-6 align-items-stretch mt-4" data-aos="zoom-in" data-aos-delay="100">
-              <div class="icon-box">
-                <h4><a href="https://lecture.syu.kr/search">학부(과) 과목 조회</a></h4>
-                <p>학부(과) 과목들을 쉽게 한눈에 확인하고, 나만의 시간표를 만들어 보세요.</p>
-              </div>
-            </div>
-            <div class="col-xl-3 col-md-6 align-items-stretch mt-4" data-aos="zoom-in" data-aos-delay="100">
-              <div class="icon-box">
-                <h4><a href="https://lecture.syu.kr/competitionRate">장바구니 경쟁률 현황</a></h4>
-                <p>수강신청에서 장바구니를 담은 인원과 경쟁률을 확인할 수 있어요.</p>
-              </div>
-            </div>
-            <div class="col-xl-3 col-md-6 align-items-stretch mt-4" data-aos="zoom-in" data-aos-delay="100">
-              <div class="icon-box">
-                <h4><a href="https://bus.syu.kr/arrivaltime">셔틀버스 실시간 도착시간</a></h4>
-                <p>셔틀버스 도착 시간을 효율적으로 확인하고, 편리한 이동을 계획하세요.</p>
-              </div>
+
+            <!-- 셔틀버스 도착시간 (구) -->
+            <div class="col-xl-3 col-md-6" data-aos="fade-up" data-aos-delay="250">
+              <a href="https://bus.syu.kr/monitor" target="_blank" class="bento-card bento-card-sub">
+                <div>
+                  <div class="bento-card-top">
+                    <div class="bento-icon icon-emerald">
+                      <i class="bi bi-clock-history"></i>
+                    </div>
+                    <div class="bento-card-arrow"><i class="bi bi-arrow-up-right"></i></div>
+                  </div>
+                  <div class="bento-card-body">
+                    <h4>셔틀버스 도착시간 (구)</h4>
+                    <p>기존 구버전 화면으로 셔틀버스 정류장별 도착 시간과 순서를 확인하세요.</p>
+                  </div>
+                </div>
+              </a>
             </div>
           </div>
-        </div>
-      </section>
-      <section id="services-2023" class="services section-bg">
-        <div class="container" data-aos="fade-up">
-          <div class="section-title">
-            <h2>2023 ~ 2024 Services</h2>
-            <p>클릭하면 해당 서비스로 이동해요.</p>
+
+          <!-- Category 2: 수강신청 및 학사 서비스 -->
+          <h3 class="bento-category-title">수강신청 및 학사 서비스</h3>
+          <div class="row g-4 mb-5">
+            <!-- 시간표 마법사 -->
+            <div class="col-xl-3 col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+              <a href="https://lecture.syu.kr/timetable" target="_blank" class="bento-card bento-card-sub">
+                <div>
+                  <div class="bento-card-top">
+                    <div class="bento-icon icon-purple">
+                      <i class="bi bi-calendar2-week-fill"></i>
+                    </div>
+                    <div class="bento-card-arrow"><i class="bi bi-arrow-up-right"></i></div>
+                  </div>
+                  <div class="bento-card-body">
+                    <h4>시간표 마법사</h4>
+                    <p>공강 시간과 최적의 강의 조합을 한눈에 비교하며 나만의 학기 시간표를 제작하세요.</p>
+                  </div>
+                </div>
+              </a>
+            </div>
+
+            <!-- 수강신청 장바구니 경쟁률 -->
+            <div class="col-xl-3 col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="150">
+              <a href="https://sugang.syu.kr/basket" target="_blank" class="bento-card bento-card-sub">
+                <div>
+                  <div class="bento-card-top">
+                    <div class="bento-icon icon-blue">
+                      <i class="bi bi-trophy-fill"></i>
+                    </div>
+                    <div class="bento-card-arrow"><i class="bi bi-arrow-up-right"></i></div>
+                  </div>
+                  <div class="bento-card-body">
+                    <h4>수강신청 장바구니 경쟁률</h4>
+                    <p>전체 학과 및 개설 과목의 장바구니 신청 인원과 실시간 경쟁률 순위를 조회하세요.</p>
+                  </div>
+                </div>
+              </a>
+            </div>
+
+            <!-- 모의 수강신청 -->
+            <div class="col-xl-3 col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+              <a href="https://sugang.syu.kr/testLogin" target="_blank" class="bento-card bento-card-sub">
+                <div>
+                  <div class="bento-card-top">
+                    <div class="bento-icon icon-emerald">
+                      <i class="bi bi-clipboard-check-fill"></i>
+                    </div>
+                    <div class="bento-card-arrow"><i class="bi bi-arrow-up-right"></i></div>
+                  </div>
+                  <div class="bento-card-body">
+                    <h4>모의 수강신청</h4>
+                    <p>실제 본 수강신청 환경과 동일한 시스템에서 사전 신청 과정을 미리 체험하세요.</p>
+                  </div>
+                </div>
+              </a>
+            </div>
+
+            <!-- 교양 과목 장바구니 경쟁률 -->
+            <div class="col-xl-3 col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="250">
+              <a href="https://sugang.syu.kr/liberalarts" target="_blank" class="bento-card bento-card-sub">
+                <div>
+                  <div class="bento-card-top">
+                    <div class="bento-icon icon-indigo">
+                      <i class="bi bi-bookmark-check-fill"></i>
+                    </div>
+                    <div class="bento-card-arrow"><i class="bi bi-arrow-up-right"></i></div>
+                  </div>
+                  <div class="bento-card-body">
+                    <h4>교양 과목별 경쟁률</h4>
+                    <p>공통교양 및 영역별 교양 과목들의 실시간 장바구니 담은 인원과 경쟁률을 확인하세요.</p>
+                  </div>
+                </div>
+              </a>
+            </div>
+
+            <!-- 폐강주의 충원률 조회 -->
+            <div class="col-xl-3 col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+              <a href="https://sugang.syu.kr/closed" target="_blank" class="bento-card bento-card-sub">
+                <div>
+                  <div class="bento-card-top">
+                    <div class="bento-icon icon-amber">
+                      <i class="bi bi-shield-exclamation"></i>
+                    </div>
+                    <div class="bento-card-arrow"><i class="bi bi-arrow-up-right"></i></div>
+                  </div>
+                  <div class="bento-card-body">
+                    <h4>폐강주의 충원률 조회</h4>
+                    <p>장바구니 담은 인원 기준 정원 미달 및 폐강 위험 과목의 실시간 충원 현황을 확인하세요.</p>
+                  </div>
+                </div>
+              </a>
+            </div>
+
+            <!-- 컴퓨터·데이터클라우드 수강현황 -->
+            <div class="col-xl-3 col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="350">
+              <a href="https://sugang.syu.kr/cse" target="_blank" class="bento-card bento-card-sub">
+                <div>
+                  <div class="bento-card-top">
+                    <div class="bento-icon icon-blue">
+                      <i class="bi bi-cpu-fill"></i>
+                    </div>
+                    <div class="bento-card-arrow"><i class="bi bi-arrow-up-right"></i></div>
+                  </div>
+                  <div class="bento-card-body">
+                    <h4>컴퓨터·데이터클라우드 수강현황</h4>
+                    <p>컴퓨터공학부 및 데이터클라우드공학과 개설 과목의 실시간 신청 인원과 잔여석을 확인하세요.</p>
+                  </div>
+                </div>
+              </a>
+            </div>
+
+            <!-- 화학생명과학과 수강현황 -->
+            <div class="col-xl-3 col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
+              <a href="https://sugang.syu.kr/chem" target="_blank" class="bento-card bento-card-sub">
+                <div>
+                  <div class="bento-card-top">
+                    <div class="bento-icon icon-rose">
+                      <i class="bi bi-capsule"></i>
+                    </div>
+                    <div class="bento-card-arrow"><i class="bi bi-arrow-up-right"></i></div>
+                  </div>
+                  <div class="bento-card-body">
+                    <h4>화학생명과학과 수강현황</h4>
+                    <p>화학생명과학과 전공 및 개설 과목의 실시간 수강신청 인원과 정원 충원 현황을 확인하세요.</p>
+                  </div>
+                </div>
+              </a>
+            </div>
+
+            <!-- 컴퓨터공학부 강의평가 -->
+            <div class="col-xl-3 col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="450">
+              <a href="https://lecture.syu.kr/cse" target="_blank" class="bento-card bento-card-sub">
+                <div>
+                  <div class="bento-card-top">
+                    <div class="bento-icon icon-purple">
+                      <i class="bi bi-chat-heart-fill"></i>
+                    </div>
+                    <div class="bento-card-arrow"><i class="bi bi-arrow-up-right"></i></div>
+                  </div>
+                  <div class="bento-card-body">
+                    <h4>컴퓨터공학부 강의평가</h4>
+                    <p>에브리타임 컴퓨터공학부 선배들이 남긴 과목별 생생한 강의평가와 후기를 모아보세요.</p>
+                  </div>
+                </div>
+              </a>
+            </div>
           </div>
-          <div class="row">
-            <div class="col-xl-3 col-md-6 align-items-stretch mt-4" data-aos="zoom-in" data-aos-delay="300">
-              <div class="icon-box">
-                <h4><a href="https://sugang.syu.kr/testLogin">모의 수강신청</a></h4>
-                <p>실제 본 수강신청과 같은 수강신청 시스템을 모의로 체험할 수 있습니다.</p>
-              </div>
+
+          <!-- Category 3: 캠퍼스 편의 및 시설 -->
+          <h3 class="bento-category-title">캠퍼스 편의 및 시설</h3>
+          <div class="row g-4">
+            <!-- SU-TALK 공지 뷰어 -->
+            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+              <a href="https://www.syu.kr/sutalk" target="_blank" class="bento-card bento-card-sub">
+                <div>
+                  <div class="bento-card-top">
+                    <div class="bento-icon icon-blue">
+                      <i class="bi bi-chat-dots-fill"></i>
+                    </div>
+                    <div class="bento-card-arrow"><i class="bi bi-arrow-up-right"></i></div>
+                  </div>
+                  <div class="bento-card-body">
+                    <h4>SU-TALK 공지 뷰어</h4>
+                    <p>수톡(SU-TALK) 채팅방의 주요 학교 공지를 웹에서 실시간으로 간편하게 확인하세요.</p>
+                  </div>
+                </div>
+              </a>
             </div>
-            <div class="col-xl-3 col-md-6 align-items-stretch mt-4" data-aos="zoom-in" data-aos-delay="400">
-              <div class="icon-box">
-                <h4><a href="https://sugang.syu.kr/basket">장바구니 경쟁률 조회</a></h4>
-                <p>본 수강신청 장바구니를 담은 인원, 경쟁률과 순위를 조회할 수 있습니다.</p>
-              </div>
+
+            <!-- 집중 열람실 좌석 현황 -->
+            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="150">
+              <a href="https://library.syu.kr/study" target="_blank" class="bento-card bento-card-sub">
+                <div>
+                  <div class="bento-card-top">
+                    <div class="bento-icon icon-amber">
+                      <i class="bi bi-door-open-fill"></i>
+                    </div>
+                    <div class="bento-card-arrow"><i class="bi bi-arrow-up-right"></i></div>
+                  </div>
+                  <div class="bento-card-body">
+                    <h4>집중 열람실 좌석 현황</h4>
+                    <p>도서관 3층 집중 열람실 좌석의 실시간 잔여석 및 사용 현황을 확인하세요.</p>
+                  </div>
+                </div>
+              </a>
             </div>
-            <div class="col-xl-3 col-md-6 align-items-stretch mt-4" data-aos="zoom-in" data-aos-delay="100">
-              <div class="icon-box">
-                <h4><a href="https://lecture.syu.kr">공통(교양) 강의 조회</a></h4>
-                <p>공통(교양) 강의의 경쟁률과 요일별, 영역별로 강의 정보를 조회할 수 있습니다.</p>
-              </div>
-            </div>
-            <div class="col-xl-3 col-md-6 align-items-stretch mt-4" data-aos="zoom-in" data-aos-delay="200">
-              <div class="icon-box">
-                <h4><a href="https://lecture.syu.kr/department">학부(과) 강의 조회</a></h4>
-                <p>학부(과) 강의의 연도별, 학기별, 학과별로 강의 정보를 조회할 수 있습니다.</p>
-              </div>
-            </div>
-            <div class="col-xl-3 col-md-6 align-items-stretch mt-4" data-aos="zoom-in" data-aos-delay="500">
-              <div class="icon-box">
-                <h4><a href="https://sugang.syu.kr/closed">폐강주의 충원률 조회</a></h4>
-                <p>본 수강신청 폐강주의인 담은 인원, 충원률과 순위를 조회할 수 있습니다.</p>
-              </div>
-            </div>
-            <div class="col-xl-3 col-md-6 align-items-stretch mt-4" data-aos="zoom-in" data-aos-delay="600">
-              <div class="icon-box">
-                <h4><a href="https://bus.syu.kr/">셔틀버스 위치 조회</a></h4>
-                <p>화랑대, 태릉입구, 석계역, 별내역 셔틀버스 위치를 조회할 수 있습니다.</p>
-              </div>
-            </div>
-            <div class="col-xl-3 col-md-6 align-items-stretch mt-4" data-aos="zoom-in" data-aos-delay="700">
-              <div class="icon-box">
-                <h4><a href="https://bus.syu.kr/bus">셔틀버스 위치 조회</a></h4>
-                <p>(베타) 화랑대, 태릉입구, 석계역 셔틀버스 위치를 조회할 수 있습니다.</p>
-              </div>
-            </div>
-            <div class="col-xl-3 col-md-6 align-items-stretch mt-4" data-aos="zoom-in" data-aos-delay="800">
-              <div class="icon-box">
-                <h4><a href="https://bus.syu.kr/monitor">셔틀버스 도착시간 조회</a></h4>
-                <p>화랑대, 태릉입구, 석계역, 별내역 셔틀버스 도착시간을 조회할 수 있습니다.</p>
-              </div>
-            </div>
-            <div class="col-xl-3 col-md-6 align-items-stretch mt-4" data-aos="zoom-in" data-aos-delay="900">
-              <div class="icon-box">
-                <h4><a href="https://lecture.syu.kr/cse">강의평가 조회</a></h4>
-                <p>컴퓨터공학부 에브리타임의 강의평가를 조회할 수 있습니다.</p>
-              </div>
-            </div>
-            <div class="col-xl-3 col-md-6 align-items-stretch mt-4" data-aos="zoom-in" data-aos-delay="1000">
-              <div class="icon-box">
-                <h4><a href="https://library.syu.kr/">도서관 좌석 조회</a></h4>
-                <p>(베타) 도서관 좌석 사용가능 여부를 조회할 수 있습니다.</p>
-              </div>
+
+            <!-- 도서관 일반 좌석 조회 -->
+            <div class="col-lg-4 col-md-12" data-aos="fade-up" data-aos-delay="200">
+              <a href="https://library.syu.kr/" target="_blank" class="bento-card bento-card-sub">
+                <div>
+                  <div class="bento-card-top">
+                    <div class="bento-icon icon-slate">
+                      <i class="bi bi-book-half"></i>
+                    </div>
+                    <div class="bento-card-arrow"><i class="bi bi-arrow-up-right"></i></div>
+                  </div>
+                  <div class="bento-card-body">
+                    <h4>도서관 좌석 조회</h4>
+                    <p>중앙도서관 일반 열람실 좌석의 실시간 잔여석 및 이용 가능 현황을 조회하세요.</p>
+                  </div>
+                </div>
+              </a>
             </div>
           </div>
         </div>
       </section>
     </main>
-    <footer style="color: #333; padding: 60px 0 0 0">
+    <footer class="site-footer">
       <div class="container">
-        <div class="row" style="padding-bottom: 40px">
-          <!-- 브랜드 섹션 -->
-          <div class="col-lg-4 col-md-6 mb-4 d-none d-lg-block">
-            <h3 style="font-weight: 900; margin-bottom: 20px; font-size: 1.8rem">
-              <i class="bi bi-mortarboard-fill" style="margin-right: 10px"></i>SYU KR
-            </h3>
-            <p style="color: #666; line-height: 1.8; font-size: 0.95rem">
-              삼육대학교 재학생을 위한<br />
-              편리한 서비스를 제공합니다.
-            </p>
-          </div>
-
-          <!-- 퀵 링크 -->
-          <div class="col-lg-4 col-md-6 mb-4 d-none d-lg-block">
-            <h4 style="font-weight: 700; margin-bottom: 20px; font-size: 1.2rem">
-              <i class="bi bi-link-45deg" style="margin-right: 8px"></i>Quick Links
-            </h4>
-            <ul style="list-style: none; padding: 0; margin: 0">
-              <li style="margin-bottom: 12px">
-                <a
-                  href="#hero"
-                  style="color: #666; text-decoration: none; transition: all 0.3s"
-                  onmouseover="
-                    this.style.color = '#0076ff'
-                    this.style.paddingLeft = '5px'
-                  "
-                  onmouseout="
-                    this.style.color = '#666'
-                    this.style.paddingLeft = '0'
-                  "
-                >
-                  <i class="bi bi-chevron-right" style="font-size: 12px"></i> Home
-                </a>
-              </li>
-              <li style="margin-bottom: 12px">
-                <a
-                  href="#about"
-                  style="color: #666; text-decoration: none; transition: all 0.3s"
-                  onmouseover="
-                    this.style.color = '#0076ff'
-                    this.style.paddingLeft = '5px'
-                  "
-                  onmouseout="
-                    this.style.color = '#666'
-                    this.style.paddingLeft = '0'
-                  "
-                >
-                  <i class="bi bi-chevron-right" style="font-size: 12px"></i> About
-                </a>
-              </li>
-              <li style="margin-bottom: 12px">
-                <a
-                  href="#services"
-                  style="color: #666; text-decoration: none; transition: all 0.3s"
-                  onmouseover="
-                    this.style.color = '#0076ff'
-                    this.style.paddingLeft = '5px'
-                  "
-                  onmouseout="
-                    this.style.color = '#666'
-                    this.style.paddingLeft = '0'
-                  "
-                >
-                  <i class="bi bi-chevron-right" style="font-size: 12px"></i> Services
-                </a>
-              </li>
-            </ul>
-          </div>
-
-          <!-- 문의 섹션 -->
-          <div class="col-lg-4 col-12 mb-4">
-            <h4 style="font-weight: 700; margin-bottom: 20px; font-size: 1.2rem">
-              <i class="bi bi-envelope-fill" style="margin-right: 8px"></i>Contact
-            </h4>
-            <div style="background: #e9ecef; border: 1px solid #dee2e6; border-radius: 12px; padding: 16px 20px">
-              <p style="margin: 0; color: #666; font-size: 0.85rem; margin-bottom: 8px">서비스 문의 및 제안</p>
-              <a
-                href="mailto:support_team@syu.kr"
-                style="color: #333; text-decoration: none; font-weight: 600; font-size: 1rem; display: flex; align-items: center; gap: 8px"
-              >
-                <i class="bi bi-mailbox" style="font-size: 1.2rem"></i>
-                support_team@syu.kr
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- 하단 구분선 및 저작권 -->
-        <div style="border-top: 1px solid #dee2e6; padding: 25px 0; text-align: center">
-          <p style="margin: 0; color: #666; font-size: 0.9rem; margin-bottom: 10px">
-            © 2023 - 2026 SYU KR (KIM SANG YUN). All rights reserved.
-          </p>
-          <p style="margin: 0; color: #999; font-size: 0.8rem">해당 사이트는 삼육대학교(학교법인 삼육학원)와 무관한 웹 사이트입니다.</p>
-        </div>
+        <p class="footer-copyright">
+          © 2023 - 2026 SYU KR (KIM SANG YUN). All rights reserved.
+        </p>
+        <p class="footer-disclaimer">
+          해당 사이트는 삼육대학교(학교법인 삼육학원)와 무관한 웹 사이트입니다.
+        </p>
+        <p class="footer-contact">
+          서비스 문의: <a href="mailto:support_team@syu.kr">support_team@syu.kr</a>
+        </p>
       </div>
     </footer>
     <script src="assets/js/main.js"></script>

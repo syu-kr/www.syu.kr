@@ -417,6 +417,87 @@ h6 {
   z-index: 2;
 }
 
+#hero .hero-stat-badge {
+  width: max-content;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+  padding: 8px 20px;
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.14);
+  box-shadow: 0 8px 24px rgba(0, 52, 135, 0.18);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  color: #ffffff;
+  font-family: 'NanumSquare', 'Pretendard', sans-serif;
+  font-size: 14.5px;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  transition: all 0.3s ease;
+}
+
+#hero .hero-stat-badge:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.42);
+  transform: translateY(-2px);
+}
+
+#hero .hero-stat-badge .stat-divider {
+  display: inline-block;
+  width: 1px;
+  height: 13px;
+  background: rgba(255, 255, 255, 0.4);
+  margin: 0 3px;
+}
+
+#hero .hero-rank-badge {
+  width: max-content;
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  margin-bottom: 18px;
+  padding: 7px 8px 7px 9px;
+  border: 1px solid rgba(255, 255, 255, 0.26);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.13);
+  box-shadow: 0 12px 28px rgba(0, 52, 135, 0.16);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  font-family: 'NanumSquare', 'Pretendard', sans-serif;
+}
+
+#hero .hero-rank-icon {
+  width: 29px;
+  height: 29px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  color: #fff;
+  background: rgba(255, 255, 255, 0.17);
+}
+
+#hero .hero-rank-label {
+  color: rgba(255, 255, 255, 0.84);
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+#hero .hero-rank-badge strong {
+  display: inline-flex;
+  align-items: center;
+  padding: 5px 10px;
+  border-radius: 999px;
+  color: #0076ff;
+  background: #fff;
+  font-size: 13px;
+  font-weight: 900;
+  line-height: 1;
+}
+
 #hero .hero-img {
   perspective: 1400px;
 }
@@ -678,6 +759,54 @@ h6 {
   font-size: 24px;
 }
 
+#hero .hero-proof {
+  display: flex;
+  align-items: center;
+  width: max-content;
+  padding: 14px 22px;
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.12);
+  box-shadow: 0 14px 34px rgba(0, 52, 135, 0.18);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  font-family: 'NanumSquare', 'Pretendard', sans-serif;
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+#hero .hero-proof:hover {
+  transform: translateY(-2px);
+  background: rgba(255, 255, 255, 0.16);
+}
+
+#hero .hero-proof-item {
+  min-width: 122px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+#hero .hero-proof-item strong {
+  color: #fff;
+  font-size: 21px;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+
+#hero .hero-proof-item span {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+#hero .hero-proof-divider {
+  width: 1px;
+  height: 36px;
+  margin: 0 18px;
+  background: rgba(255, 255, 255, 0.28);
+}
+
 #hero .btn-get-started {
   font-family: 'Jost', sans-serif;
   font-weight: 500;
@@ -781,9 +910,26 @@ h6 {
     width: 318px;
   }
 
+  #hero .hero-proof {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  #hero .hero-rank-badge,
+  #hero .hero-stat-badge {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
 }
 
 @media (max-width: 768px) {
+  #hero .hero-stat-badge {
+    margin-bottom: 16px;
+    font-size: 13px;
+    padding: 6px 16px;
+  }
+
   #hero h1 {
     font-size: 28px;
     line-height: 36px;
@@ -918,6 +1064,34 @@ h6 {
   #hero .btn-get-started {
     font-size: 16px;
     padding: 10px 24px 11px 24px;
+  }
+
+  #hero .hero-rank-badge {
+    margin-bottom: 12px;
+  }
+
+  #hero .hero-proof {
+    width: min(100%, 320px);
+    justify-content: center;
+    padding: 13px 16px;
+    border-radius: 18px;
+  }
+
+  #hero .hero-proof-item {
+    flex: 1;
+    min-width: 0;
+  }
+
+  #hero .hero-proof-item strong {
+    font-size: 19px;
+  }
+
+  #hero .hero-proof-item span {
+    font-size: 12px;
+  }
+
+  #hero .hero-proof-divider {
+    margin: 0 12px;
   }
 
 }
