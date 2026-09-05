@@ -108,12 +108,64 @@
   }
 
   /**
-   * Mobile nav toggle
+   * Mobile nav handlers
    */
+  const closeMobileNav = () => {
+    const navbar = select('#navbar')
+    if (navbar && navbar.classList.contains('navbar-mobile')) {
+      navbar.classList.remove('navbar-mobile')
+      document.body.classList.remove('mobile-nav-active')
+      const navbarToggle = select('.mobile-nav-toggle')
+      if (navbarToggle) {
+        const icon = navbarToggle.querySelector('i')
+        if (icon) {
+          icon.classList.remove('bi-x')
+          icon.classList.add('bi-list')
+        }
+      }
+    }
+  }
+
+  const toggleMobileNav = () => {
+    const navbar = select('#navbar')
+    if (!navbar) return
+    const isOpening = !navbar.classList.contains('navbar-mobile')
+    navbar.classList.toggle('navbar-mobile')
+    if (isOpening) {
+      document.body.classList.add('mobile-nav-active')
+    } else {
+      document.body.classList.remove('mobile-nav-active')
+    }
+    const navbarToggle = select('.mobile-nav-toggle')
+    if (navbarToggle) {
+      const icon = navbarToggle.querySelector('i')
+      if (icon) {
+        icon.classList.toggle('bi-list', !isOpening)
+        icon.classList.toggle('bi-x', isOpening)
+      }
+    }
+  }
+
   on('click', '.mobile-nav-toggle', function(e) {
-    select('#navbar').classList.toggle('navbar-mobile')
-    this.classList.toggle('bi-list')
-    this.classList.toggle('bi-x')
+    e.stopPropagation()
+    toggleMobileNav()
+  })
+
+  on('click', '.mobile-nav-close', function(e) {
+    e.preventDefault()
+    e.stopPropagation()
+    closeMobileNav()
+  })
+
+  on('click', '.mobile-nav-backdrop', function(e) {
+    e.preventDefault()
+    closeMobileNav()
+  })
+
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+      closeMobileNav()
+    }
   })
 
   /**
@@ -127,21 +179,21 @@
   }, true)
 
   /**
-   * Scrool with ofset on links with a class name .scrollto
+   * Scroll with offset on links with a class name .scrollto
    */
   on('click', '.scrollto', function(e) {
     if (select(this.hash)) {
       e.preventDefault()
-
-      let navbar = select('#navbar')
-      if (navbar.classList.contains('navbar-mobile')) {
-        navbar.classList.remove('navbar-mobile')
-        let navbarToggle = select('.mobile-nav-toggle')
-        navbarToggle.classList.toggle('bi-list')
-        navbarToggle.classList.toggle('bi-x')
-      }
+      closeMobileNav()
       scrollto(this.hash)
     }
+  }, true)
+
+  /**
+   * Auto close drawer when clicking any non-scrollto link inside drawer
+   */
+  on('click', '.mobile-nav-drawer a:not(.scrollto)', function(e) {
+    closeMobileNav()
   }, true)
 
   /**

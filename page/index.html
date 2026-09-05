@@ -189,7 +189,9 @@
         font-size: 1.05rem;
         box-sizing: border-box;
         box-shadow: none !important;
-        transition: background-color 0.2s ease, transform 0.2s ease;
+        transition:
+          background-color 0.2s ease,
+          transform 0.2s ease;
       }
 
       .food-service-btn {
@@ -342,7 +344,6 @@
         margin: 0 auto 50px;
       }
 
-
       .bento-header h2 {
         font-size: 2.3rem;
         font-weight: 900;
@@ -384,12 +385,16 @@
         position: relative;
         overflow: hidden;
         transition: all 0.35s cubic-bezier(0.2, 0.8, 0.2, 1);
-        box-shadow: 0 4px 16px -2px rgba(15, 23, 42, 0.04), 0 2px 6px -1px rgba(15, 23, 42, 0.02);
+        box-shadow:
+          0 4px 16px -2px rgba(15, 23, 42, 0.04),
+          0 2px 6px -1px rgba(15, 23, 42, 0.02);
       }
 
       .bento-card:hover {
         transform: translateY(-6px);
-        box-shadow: 0 20px 35px -8px rgba(37, 99, 235, 0.12), 0 10px 18px -4px rgba(15, 23, 42, 0.06);
+        box-shadow:
+          0 20px 35px -8px rgba(37, 99, 235, 0.12),
+          0 10px 18px -4px rgba(15, 23, 42, 0.06);
         border-color: rgba(99, 102, 241, 0.35);
       }
 
@@ -435,7 +440,6 @@
         color: #ffffff;
         transform: translate(2px, -2px);
       }
-
 
       .bento-card-body h3,
       .bento-card-body h4 {
@@ -569,17 +573,136 @@
   </head>
   <body>
     <header id="header" class="fixed-top">
-      <div class="container d-flex align-items-center">
+      <div class="container d-flex align-items-center justify-content-between">
         <h1 class="logo me-auto">
           <a href="/">SYU KR</a>
         </h1>
         <nav id="navbar" class="navbar">
-          <ul>
+          <ul class="desktop-nav-menu">
             <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
-            <li><a class="nav-link scrollto" href="#about">About</a></li>
             <li><a class="nav-link scrollto" href="#services">Services</a></li>
           </ul>
-          <i class="bi bi-list mobile-nav-toggle"></i>
+          <button type="button" class="mobile-nav-toggle" aria-label="모바일 메뉴 열기">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <!-- 모바일 오프캔버스 드로어 네비게이션 -->
+          <div class="mobile-nav-backdrop" aria-hidden="true"></div>
+          <div class="mobile-nav-drawer" role="dialog" aria-modal="true" aria-label="사이트 모바일 메뉴">
+            <!-- 드로어 헤더 -->
+            <div class="mobile-nav-header">
+              <div class="mobile-nav-brand">
+                <span class="brand-title">SYU KR</span>
+              </div>
+              <button type="button" class="mobile-nav-close" aria-label="메뉴 닫기">
+                <i class="bi bi-x-lg"></i>
+              </button>
+            </div>
+
+            <!-- 드로어 본문 -->
+            <div class="mobile-nav-body">
+              <!-- 메뉴 탐색 -->
+              <div class="mobile-nav-section">
+                <div class="mobile-section-label">탐색</div>
+                <ul class="mobile-menu-list">
+                  <li>
+                    <a class="mobile-menu-item scrollto active" href="#hero">
+                      <div class="item-icon-wrap">
+                        <i class="bi bi-house-door-fill"></i>
+                      </div>
+                      <span class="item-text">홈 (Home)</span>
+                      <i class="bi bi-chevron-right item-arrow"></i>
+                    </a>
+                  </li>
+                  <li>
+                    <a class="mobile-menu-item scrollto" href="#services">
+                      <div class="item-icon-wrap">
+                        <i class="bi bi-grid-fill"></i>
+                      </div>
+                      <span class="item-text">서비스 목록 (Services)</span>
+                      <span class="item-badge">11</span>
+                      <i class="bi bi-chevron-right item-arrow"></i>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+
+              <!-- 주요 서비스 빠른 실행 -->
+              <div class="mobile-nav-section">
+                <div class="mobile-section-label">주요 서비스 바로가기</div>
+                <div class="mobile-shortcuts-grid">
+                  <!-- 시간표 마법사 -->
+                  <a href="https://lecture.syu.kr/timetable" target="_blank" rel="noopener noreferrer" class="shortcut-card">
+                    <div class="shortcut-icon icon-purple">
+                      <i class="bi bi-calendar2-week-fill"></i>
+                    </div>
+                    <div class="shortcut-info">
+                      <span class="shortcut-name">시간표</span>
+                      <span class="shortcut-desc">시간표 만들기</span>
+                    </div>
+                  </a>
+
+                  <!-- 장바구니 경쟁률 -->
+                  <a href="https://sugang.syu.kr/basket" target="_blank" rel="noopener noreferrer" class="shortcut-card">
+                    <div class="shortcut-icon icon-blue">
+                      <i class="bi bi-trophy-fill"></i>
+                    </div>
+                    <div class="shortcut-info">
+                      <span class="shortcut-name">장바구니</span>
+                      <span class="shortcut-desc">수강 경쟁률</span>
+                    </div>
+                  </a>
+
+                  <!-- 셔틀버스 -->
+                  <a href="https://bus.syu.kr/" target="_blank" rel="noopener noreferrer" class="shortcut-card">
+                    <div class="shortcut-icon icon-emerald">
+                      <i class="bi bi-clock-history"></i>
+                    </div>
+                    <div class="shortcut-info">
+                      <span class="shortcut-name">셔틀버스</span>
+                      <span class="shortcut-desc">실시간 정보</span>
+                    </div>
+                  </a>
+
+                  <!-- 한끼 -->
+                  <a href="https://food.syu.kr/" target="_blank" rel="noopener noreferrer" class="shortcut-card">
+                    <div class="shortcut-icon icon-lime">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="20" height="20" aria-hidden="true">
+                        <path d="M10 35h44c0 13-8.8 22-22 22S10 48 10 35Z" fill="#171713" />
+                        <path
+                          d="M13 35c1.6-8.2 8.8-13 19-13s17.4 4.8 19 13H13Z"
+                          fill="#f4f0e7"
+                          stroke="#171713"
+                          stroke-width="3.5"
+                          stroke-linejoin="round"
+                        />
+                        <path
+                          d="M32 7c-7.4 0-12 5.3-12 11.8C20 28.2 32 39 32 39s12-10.8 12-20.2C44 12.3 39.4 7 32 7Z"
+                          fill="#c9fa64"
+                          stroke="#171713"
+                          stroke-width="3.5"
+                          stroke-linejoin="round"
+                        />
+                        <circle cx="32" cy="19" r="4.5" fill="#171713" />
+                      </svg>
+                    </div>
+                    <div class="shortcut-info">
+                      <span class="shortcut-name">한끼</span>
+                      <span class="shortcut-desc">후문 맛집</span>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- 드로어 푸터 -->
+            <div class="mobile-nav-footer">
+              <div class="footer-contact-info">
+                <span>문의: <a href="mailto:support_team@syu.kr">support_team@syu.kr</a></span>
+              </div>
+              <div class="footer-copy">© 2023 - 2026 SYU KR. All rights reserved.</div>
+            </div>
+          </div>
         </nav>
       </div>
     </header>
@@ -696,35 +819,51 @@
       <section class="food-service-banner">
         <div class="container" data-aos="fade-up">
           <div class="food-service-card">
-            <div style="display: flex; align-items: center; gap: 20px; flex: 1; min-width: 280px;">
+            <div style="display: flex; align-items: center; gap: 20px; flex: 1; min-width: 280px">
               <div class="food-service-icon-box">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="40" height="40" aria-hidden="true">
-                  <path d="M10 35h44c0 13-8.8 22-22 22S10 48 10 35Z" fill="#171713"/>
-                  <path d="M13 35c1.6-8.2 8.8-13 19-13s17.4 4.8 19 13H13Z" fill="#f4f0e7" stroke="#171713" stroke-width="3.5" stroke-linejoin="round"/>
-                  <path d="M32 7c-7.4 0-12 5.3-12 11.8C20 28.2 32 39 32 39s12-10.8 12-20.2C44 12.3 39.4 7 32 7Z" fill="#c9fa64" stroke="#171713" stroke-width="3.5" stroke-linejoin="round"/>
-                  <circle cx="32" cy="19" r="4.5" fill="#171713"/>
+                  <path d="M10 35h44c0 13-8.8 22-22 22S10 48 10 35Z" fill="#171713" />
+                  <path
+                    d="M13 35c1.6-8.2 8.8-13 19-13s17.4 4.8 19 13H13Z"
+                    fill="#f4f0e7"
+                    stroke="#171713"
+                    stroke-width="3.5"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M32 7c-7.4 0-12 5.3-12 11.8C20 28.2 32 39 32 39s12-10.8 12-20.2C44 12.3 39.4 7 32 7Z"
+                    fill="#c9fa64"
+                    stroke="#171713"
+                    stroke-width="3.5"
+                    stroke-linejoin="round"
+                  />
+                  <circle cx="32" cy="19" r="4.5" fill="#171713" />
                 </svg>
               </div>
               <div>
-                <div class="food-title-wrap" style="display: flex; align-items: center; gap: 10px; margin-bottom: 6px; flex-wrap: wrap;">
+                <div class="food-title-wrap" style="display: flex; align-items: center; gap: 10px; margin-bottom: 6px; flex-wrap: wrap">
                   <span class="food-badge-new">NEW</span>
-                  <h3 style="font-weight: 900; font-size: 1.65rem; margin: 0; color: #1e293b; font-family: 'NanumSquare', 'Pretendard', sans-serif;">
+                  <h3
+                    style="
+                      font-weight: 900;
+                      font-size: 1.65rem;
+                      margin: 0;
+                      color: #1e293b;
+                      font-family: 'NanumSquare', 'Pretendard', sans-serif;
+                    "
+                  >
                     한끼 · 삼육대학교 후문
                   </h3>
                 </div>
-                <p style="color: #64748b; font-size: 0.98rem; line-height: 1.5; margin-bottom: 0;">
+                <p style="color: #64748b; font-size: 0.98rem; line-height: 1.5; margin-bottom: 0">
                   삼육대학교 후문 근처 음식점과 카페를 가까운 순으로 넘겨보는 맛집 큐레이션
                 </p>
               </div>
             </div>
-            <div style="flex: 0 0 auto;">
-              <a
-                href="https://food.syu.kr/"
-                target="_blank"
-                class="food-service-btn"
-              >
+            <div style="flex: 0 0 auto">
+              <a href="https://food.syu.kr/" target="_blank" class="food-service-btn">
                 <span>후문 맛집 둘러보기</span>
-                <i class="bi bi-arrow-right-circle-fill" style="font-size: 1.15rem; margin-left: 2px;"></i>
+                <i class="bi bi-arrow-right-circle-fill" style="font-size: 1.15rem; margin-left: 2px"></i>
               </a>
             </div>
           </div>
@@ -734,37 +873,48 @@
       <section class="chrome-extension-banner">
         <div class="container" data-aos="fade-up">
           <div class="chrome-extension-card">
-            <div style="display: flex; align-items: center; gap: 20px; flex: 1; min-width: 280px;">
+            <div style="display: flex; align-items: center; gap: 20px; flex: 1; min-width: 280px">
               <div class="chrome-service-icon-box">
                 <i class="bi bi-bell-fill"></i>
               </div>
               <div>
-                <div class="chrome-title-wrap" style="display: flex; align-items: center; gap: 10px; margin-bottom: 6px; flex-wrap: wrap;">
-                  <h3 style="font-weight: 900; font-size: 1.65rem; margin: 0; color: #1e293b; font-family: 'NanumSquare', 'Pretendard', sans-serif;">
+                <div class="chrome-title-wrap" style="display: flex; align-items: center; gap: 10px; margin-bottom: 6px; flex-wrap: wrap">
+                  <h3
+                    style="
+                      font-weight: 900;
+                      font-size: 1.65rem;
+                      margin: 0;
+                      color: #1e293b;
+                      font-family: 'NanumSquare', 'Pretendard', sans-serif;
+                    "
+                  >
                     SYU 공지 알리미
                   </h3>
                 </div>
-                <p style="color: #64748b; font-size: 0.98rem; line-height: 1.5; margin-bottom: 0;">
+                <p style="color: #64748b; font-size: 0.98rem; line-height: 1.5; margin-bottom: 0">
                   크롬 브라우저 확장 프로그램으로 학교 공지를 간편하게 확인할 수 있어요!
                 </p>
               </div>
             </div>
-            <div style="flex: 0 0 auto;">
-              <a
-                href="https://www.syu.kr/notice"
-                target="_blank"
-                class="chrome-extension-btn"
-              >
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="22" height="22" style="flex-shrink: 0;" aria-hidden="true">
-                  <circle cx="24" cy="24" r="12" fill="#fff"/>
-                  <path d="M24 12h20.78a24 24 0 0 0-41.56 0L13.61 30A12 12 0 0 1 24 12z" fill="#ea4335"/>
-                  <path d="M34.39 30L24 48a24 24 0 0 0 20.78-36H24a12 12 0 0 1 10.39 18z" fill="#fbbc04"/>
-                  <path d="M13.61 30L3.22 12A24 24 0 0 0 24 48l10.39-18a12 12 0 0 1-20.78 0z" fill="#34a853"/>
-                  <circle cx="24" cy="24" r="12" fill="#fff"/>
-                  <circle cx="24" cy="24" r="9.5" fill="#1a73e8"/>
+            <div style="flex: 0 0 auto">
+              <a href="https://www.syu.kr/notice" target="_blank" class="chrome-extension-btn">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 48 48"
+                  width="22"
+                  height="22"
+                  style="flex-shrink: 0"
+                  aria-hidden="true"
+                >
+                  <circle cx="24" cy="24" r="12" fill="#fff" />
+                  <path d="M24 12h20.78a24 24 0 0 0-41.56 0L13.61 30A12 12 0 0 1 24 12z" fill="#ea4335" />
+                  <path d="M34.39 30L24 48a24 24 0 0 0 20.78-36H24a12 12 0 0 1 10.39 18z" fill="#fbbc04" />
+                  <path d="M13.61 30L3.22 12A24 24 0 0 0 24 48l10.39-18a12 12 0 0 1-20.78 0z" fill="#34a853" />
+                  <circle cx="24" cy="24" r="12" fill="#fff" />
+                  <circle cx="24" cy="24" r="9.5" fill="#1a73e8" />
                 </svg>
                 <span>Chrome에 추가</span>
-                <i class="bi bi-arrow-right-circle-fill" style="font-size: 1.15rem; margin-left: 2px;"></i>
+                <i class="bi bi-arrow-right-circle-fill" style="font-size: 1.15rem; margin-left: 2px"></i>
               </a>
             </div>
           </div>
@@ -805,15 +955,21 @@
                   <div class="bento-card-top">
                     <div class="bento-icon icon-blue">
                       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M4 17L9 12H15L20 7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
-                        <path d="M9 6V12" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
-                        <path d="M15 12V18" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
-                        <circle cx="4" cy="17" r="2" fill="#ffffff" stroke="currentColor" stroke-width="1.8"/>
-                        <circle cx="9" cy="6" r="2" fill="#ffffff" stroke="currentColor" stroke-width="1.8"/>
-                        <circle cx="9" cy="12" r="2.8" fill="#ffffff" stroke="currentColor" stroke-width="2"/>
-                        <circle cx="15" cy="12" r="2.8" fill="#ffffff" stroke="currentColor" stroke-width="2"/>
-                        <circle cx="15" cy="18" r="2" fill="#ffffff" stroke="currentColor" stroke-width="1.8"/>
-                        <circle cx="20" cy="7" r="2" fill="#ffffff" stroke="currentColor" stroke-width="1.8"/>
+                        <path
+                          d="M4 17L9 12H15L20 7"
+                          stroke="currentColor"
+                          stroke-width="2.2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                        <path d="M9 6V12" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" />
+                        <path d="M15 12V18" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" />
+                        <circle cx="4" cy="17" r="2" fill="#ffffff" stroke="currentColor" stroke-width="1.8" />
+                        <circle cx="9" cy="6" r="2" fill="#ffffff" stroke="currentColor" stroke-width="1.8" />
+                        <circle cx="9" cy="12" r="2.8" fill="#ffffff" stroke="currentColor" stroke-width="2" />
+                        <circle cx="15" cy="12" r="2.8" fill="#ffffff" stroke="currentColor" stroke-width="2" />
+                        <circle cx="15" cy="18" r="2" fill="#ffffff" stroke="currentColor" stroke-width="1.8" />
+                        <circle cx="20" cy="7" r="2" fill="#ffffff" stroke="currentColor" stroke-width="1.8" />
                       </svg>
                     </div>
                     <div class="bento-card-arrow"><i class="bi bi-arrow-up-right"></i></div>
@@ -884,26 +1040,8 @@
               </a>
             </div>
 
-            <!-- 수강신청 장바구니 경쟁률 -->
-            <div class="col-xl-3 col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="150">
-              <a href="https://sugang.syu.kr/basket" target="_blank" class="bento-card bento-card-sub">
-                <div>
-                  <div class="bento-card-top">
-                    <div class="bento-icon icon-blue">
-                      <i class="bi bi-trophy-fill"></i>
-                    </div>
-                    <div class="bento-card-arrow"><i class="bi bi-arrow-up-right"></i></div>
-                  </div>
-                  <div class="bento-card-body">
-                    <h4>수강신청 장바구니 경쟁률</h4>
-                    <p>전체 학과 및 개설 과목의 장바구니 신청 인원과 실시간 경쟁률 순위를 조회하세요.</p>
-                  </div>
-                </div>
-              </a>
-            </div>
-
             <!-- 모의 수강신청 -->
-            <div class="col-xl-3 col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+            <div class="col-xl-3 col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="150">
               <a href="https://sugang.syu.kr/testLogin" target="_blank" class="bento-card bento-card-sub">
                 <div>
                   <div class="bento-card-top">
@@ -920,13 +1058,31 @@
               </a>
             </div>
 
-            <!-- 교양 과목 장바구니 경쟁률 -->
+            <!-- 수강신청 장바구니 경쟁률 -->
+            <div class="col-xl-3 col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+              <a href="https://sugang.syu.kr/basket" target="_blank" class="bento-card bento-card-sub">
+                <div>
+                  <div class="bento-card-top">
+                    <div class="bento-icon icon-blue">
+                      <i class="bi bi-trophy-fill"></i>
+                    </div>
+                    <div class="bento-card-arrow"><i class="bi bi-arrow-up-right"></i></div>
+                  </div>
+                  <div class="bento-card-body">
+                    <h4>수강신청 장바구니 경쟁률</h4>
+                    <p>전체 학과 및 개설 과목의 장바구니 신청 인원과 실시간 경쟁률 순위를 조회하세요.</p>
+                  </div>
+                </div>
+              </a>
+            </div>
+
+            <!-- 교양 과목별 경쟁률 -->
             <div class="col-xl-3 col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="250">
               <a href="https://sugang.syu.kr/liberalarts" target="_blank" class="bento-card bento-card-sub">
                 <div>
                   <div class="bento-card-top">
-                    <div class="bento-icon icon-indigo">
-                      <i class="bi bi-bookmark-check-fill"></i>
+                    <div class="bento-icon icon-blue">
+                      <i class="bi bi-trophy-fill"></i>
                     </div>
                     <div class="bento-card-arrow"><i class="bi bi-arrow-up-right"></i></div>
                   </div>
@@ -1073,15 +1229,9 @@
     </main>
     <footer class="site-footer">
       <div class="container">
-        <p class="footer-copyright">
-          © 2023 - 2026 SYU KR (KIM SANG YUN). All rights reserved.
-        </p>
-        <p class="footer-disclaimer">
-          해당 사이트는 삼육대학교(학교법인 삼육학원)와 무관한 웹 사이트입니다.
-        </p>
-        <p class="footer-contact">
-          서비스 문의: <a href="mailto:support_team@syu.kr">support_team@syu.kr</a>
-        </p>
+        <p class="footer-copyright">© 2023 - 2026 SYU KR (KIM SANG YUN). All rights reserved.</p>
+        <p class="footer-disclaimer">해당 사이트는 삼육대학교(학교법인 삼육학원)와 무관한 웹 사이트입니다.</p>
+        <p class="footer-contact">서비스 문의: <a href="mailto:support_team@syu.kr">support_team@syu.kr</a></p>
       </div>
     </footer>
     <script src="assets/js/main.js"></script>
