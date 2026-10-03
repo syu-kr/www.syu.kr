@@ -12,6 +12,8 @@
     <meta name="description" content="삼육대학교 재학생을 위한 서비스를 제공합니다" />
 
     <link href="https://www.syu.kr/favicon/favicon.ico" rel="icon" />
+    <link rel="preload" href="/assets/img/banner.webp" as="image" type="image/webp" fetchpriority="high" />
+    <link rel="preload" href="/assets/img/banner-sunglasses.webp" as="image" type="image/webp" fetchpriority="high" />
 
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-L75N27FJKL"></script>
@@ -32,15 +34,11 @@
     />
 
     <!-- Vendor CSS Files -->
-    <link href="assets/vendor/aos/aos.css" rel="stylesheet" />
     <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
     <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet" />
 
     <!-- Template Main CSS File -->
-    <link href="assets/css/style.css" rel="stylesheet" />
-
-    <!-- Vendor JS Files -->
-    <script src="assets/vendor/aos/aos.js"></script>
+    <link href="assets/css/style.css?v=20261003-shuttle-15" rel="stylesheet" />
 
     <style>
       @import url(https://cdn.jsdelivr.net/gh/moonspam/NanumSquare@1.0/nanumsquare.css);
@@ -125,112 +123,6 @@
         word-break: keep-all;
       }
 
-      /* Banner Cards (한끼 & Chrome 확장 프로그램) */
-      .food-service-banner {
-        padding: 50px 0 10px;
-        position: relative;
-      }
-
-      .chrome-extension-banner {
-        padding: 10px 0 50px;
-        position: relative;
-      }
-
-      .food-service-card,
-      .chrome-extension-card {
-        background: #ffffff;
-        border-radius: 20px;
-        padding: 28px 36px;
-        border: 1px solid #e2e8f0;
-        box-shadow: none !important;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 24px;
-        flex-wrap: wrap;
-        box-sizing: border-box;
-      }
-
-      .food-service-icon-box,
-      .chrome-service-icon-box {
-        width: 56px;
-        height: 56px;
-        border-radius: 16px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-shrink: 0;
-        box-shadow: none !important;
-      }
-
-      .food-service-icon-box {
-        background-color: #f4f0e7;
-        border: 1px solid rgba(23, 23, 19, 0.08);
-      }
-
-      .chrome-service-icon-box {
-        background-color: #eff6ff;
-        border: 1px solid rgba(26, 115, 232, 0.12);
-        color: #1a73e8;
-        font-size: 26px;
-      }
-
-      .food-service-btn,
-      .chrome-extension-btn {
-        width: 230px;
-        height: 52px;
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        gap: 10px;
-        border-radius: 50px;
-        text-decoration: none !important;
-        font-weight: 700;
-        font-size: 1.05rem;
-        box-sizing: border-box;
-        box-shadow: none !important;
-        transition:
-          background-color 0.2s ease,
-          transform 0.2s ease;
-      }
-
-      .food-service-btn {
-        background-color: #ea580c;
-        color: #ffffff !important;
-      }
-
-      .food-service-btn:hover {
-        transform: translateY(-2px);
-        background-color: #c2410c;
-        box-shadow: none !important;
-        color: #ffffff !important;
-      }
-
-      .chrome-extension-btn {
-        background-color: #1a73e8;
-        color: #ffffff !important;
-      }
-
-      .chrome-extension-btn:hover {
-        transform: translateY(-2px);
-        background-color: #1557b0;
-        box-shadow: none !important;
-        color: #ffffff !important;
-      }
-
-      .food-badge-new {
-        display: inline-flex;
-        align-items: center;
-        padding: 3px 9px;
-        background: #ea580c;
-        color: #ffffff;
-        font-size: 0.72rem;
-        font-weight: 800;
-        letter-spacing: 0.05em;
-        border-radius: 9999px;
-        line-height: 1.3;
-      }
-
       /* Footer Styles */
       .site-footer {
         padding: 38px 0;
@@ -268,45 +160,6 @@
       }
 
       @media (max-width: 768px) {
-        .food-service-banner {
-          padding: 35px 0 10px;
-        }
-
-        .chrome-extension-banner {
-          padding: 10px 0 35px;
-        }
-
-        .food-service-card,
-        .chrome-extension-card {
-          padding: 24px 20px;
-          text-align: center;
-          justify-content: center;
-        }
-
-        .food-service-card > div:first-child,
-        .chrome-extension-card > div:first-child {
-          flex-direction: column;
-          text-align: center;
-          gap: 14px !important;
-          align-items: center;
-        }
-
-        .food-service-card .food-title-wrap,
-        .chrome-extension-card .chrome-title-wrap {
-          justify-content: center;
-        }
-
-        .food-service-card > div:last-child,
-        .chrome-extension-card > div:last-child {
-          width: 100%;
-        }
-
-        .food-service-btn,
-        .chrome-extension-btn {
-          width: 100% !important;
-          justify-content: center !important;
-        }
-
         .site-footer {
           padding: 24px 16px;
         }
@@ -360,6 +213,11 @@
         margin-bottom: 0;
       }
 
+      .shuttle-compact-only,
+      .shuttle-compact-grid {
+        display: none !important;
+      }
+
       .bento-category-title {
         font-size: 1.45rem;
         font-weight: 800;
@@ -369,7 +227,7 @@
         font-family: 'NanumSquare', 'Pretendard', sans-serif;
       }
 
-      .bento-category-title:first-of-type {
+      .bento-category-title--first {
         margin-top: 10px;
       }
 
@@ -520,6 +378,64 @@
         font-size: 0.86rem;
       }
 
+      @media (max-width: 1024px) {
+        .shuttle-compact-only,
+        .shuttle-compact-grid {
+          display: flex !important;
+        }
+
+        .shuttle-compact-grid .bento-card-sub {
+          min-height: 170px;
+        }
+      }
+
+      @media (max-width: 575px) {
+        .shuttle-compact-grid {
+          --bs-gutter-x: 12px;
+          --bs-gutter-y: 12px;
+        }
+
+        .shuttle-compact-grid .bento-card-sub {
+          min-height: 190px;
+          padding: 15px 14px;
+        }
+
+        .shuttle-compact-grid .bento-card-top {
+          margin-bottom: 13px;
+        }
+
+        .shuttle-compact-grid .bento-icon {
+          width: 40px;
+          height: 40px;
+          border-radius: 12px;
+          font-size: 18px;
+        }
+
+        .shuttle-compact-grid .bento-card-body h4 {
+          margin-bottom: 7px;
+          font-size: 0.96rem;
+          line-height: 1.25;
+          word-break: keep-all;
+        }
+
+        .shuttle-compact-grid .bento-card-body p {
+          display: block;
+          font-size: 0.76rem;
+          line-height: 1.5;
+          word-break: keep-all;
+        }
+      }
+
+      @media (max-width: 360px) {
+        .shuttle-compact-grid > .col-6 {
+          width: 100%;
+        }
+
+        .shuttle-compact-grid .bento-card-sub {
+          min-height: 150px;
+        }
+      }
+
       /* Icon Color Presets */
       .icon-blue {
         background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
@@ -572,181 +488,129 @@
     </style>
   </head>
   <body>
-    <header id="header" class="fixed-top">
+    <header id="header">
       <div class="container d-flex align-items-center justify-content-between">
         <h1 class="logo me-auto">
-          <a href="/">SYU KR</a>
+          <a class="site-brand" href="/" aria-label="SYU KR 홈">
+            <span class="site-brand-word">
+              <span class="site-brand-syu">SYU</span><span class="site-brand-separator" aria-hidden="true"> . </span
+              ><span class="site-brand-kr">KR</span>
+            </span>
+            <span class="site-brand-caption" aria-hidden="true">STUDENT<br />UTILITY</span>
+          </a>
         </h1>
         <nav id="navbar" class="navbar">
           <ul class="desktop-nav-menu">
             <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
             <li><a class="nav-link scrollto" href="#services">Services</a></li>
           </ul>
-          <button type="button" class="mobile-nav-toggle" aria-label="모바일 메뉴 열기">
-            <i class="bi bi-list"></i>
-          </button>
-
-          <!-- 모바일 오프캔버스 드로어 네비게이션 -->
-          <div class="mobile-nav-backdrop" aria-hidden="true"></div>
-          <div class="mobile-nav-drawer" role="dialog" aria-modal="true" aria-label="사이트 모바일 메뉴">
-            <!-- 드로어 헤더 -->
-            <div class="mobile-nav-header">
-              <div class="mobile-nav-brand">
-                <span class="brand-title">SYU KR</span>
-              </div>
-              <button type="button" class="mobile-nav-close" aria-label="메뉴 닫기">
-                <i class="bi bi-x-lg"></i>
-              </button>
-            </div>
-
-            <!-- 드로어 본문 -->
-            <div class="mobile-nav-body">
-              <!-- 메뉴 탐색 -->
-              <div class="mobile-nav-section">
-                <div class="mobile-section-label">탐색</div>
-                <ul class="mobile-menu-list">
-                  <li>
-                    <a class="mobile-menu-item scrollto active" href="#hero">
-                      <div class="item-icon-wrap">
-                        <i class="bi bi-house-door-fill"></i>
-                      </div>
-                      <span class="item-text">홈 (Home)</span>
-                      <i class="bi bi-chevron-right item-arrow"></i>
-                    </a>
-                  </li>
-                  <li>
-                    <a class="mobile-menu-item scrollto" href="#services">
-                      <div class="item-icon-wrap">
-                        <i class="bi bi-grid-fill"></i>
-                      </div>
-                      <span class="item-text">서비스 목록 (Services)</span>
-                      <span class="item-badge">11</span>
-                      <i class="bi bi-chevron-right item-arrow"></i>
-                    </a>
-                  </li>
-                </ul>
-              </div>
-
-              <!-- 주요 서비스 빠른 실행 -->
-              <div class="mobile-nav-section">
-                <div class="mobile-section-label">주요 서비스 바로가기</div>
-                <div class="mobile-shortcuts-grid">
-                  <!-- 시간표 마법사 -->
-                  <a href="https://lecture.syu.kr/timetable" target="_blank" rel="noopener noreferrer" class="shortcut-card">
-                    <div class="shortcut-icon icon-purple">
-                      <i class="bi bi-calendar2-week-fill"></i>
-                    </div>
-                    <div class="shortcut-info">
-                      <span class="shortcut-name">시간표</span>
-                      <span class="shortcut-desc">시간표 만들기</span>
-                    </div>
-                  </a>
-
-                  <!-- 장바구니 경쟁률 -->
-                  <a href="https://sugang.syu.kr/basket" target="_blank" rel="noopener noreferrer" class="shortcut-card">
-                    <div class="shortcut-icon icon-blue">
-                      <i class="bi bi-trophy-fill"></i>
-                    </div>
-                    <div class="shortcut-info">
-                      <span class="shortcut-name">장바구니</span>
-                      <span class="shortcut-desc">수강 경쟁률</span>
-                    </div>
-                  </a>
-
-                  <!-- 셔틀버스 -->
-                  <a href="https://bus.syu.kr/" target="_blank" rel="noopener noreferrer" class="shortcut-card">
-                    <div class="shortcut-icon icon-emerald">
-                      <i class="bi bi-clock-history"></i>
-                    </div>
-                    <div class="shortcut-info">
-                      <span class="shortcut-name">셔틀버스</span>
-                      <span class="shortcut-desc">실시간 정보</span>
-                    </div>
-                  </a>
-
-                  <!-- 한끼 -->
-                  <a href="https://food.syu.kr/" target="_blank" rel="noopener noreferrer" class="shortcut-card">
-                    <div class="shortcut-icon icon-lime">
-                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="20" height="20" aria-hidden="true">
-                        <path d="M10 35h44c0 13-8.8 22-22 22S10 48 10 35Z" fill="#171713" />
-                        <path
-                          d="M13 35c1.6-8.2 8.8-13 19-13s17.4 4.8 19 13H13Z"
-                          fill="#f4f0e7"
-                          stroke="#171713"
-                          stroke-width="3.5"
-                          stroke-linejoin="round"
-                        />
-                        <path
-                          d="M32 7c-7.4 0-12 5.3-12 11.8C20 28.2 32 39 32 39s12-10.8 12-20.2C44 12.3 39.4 7 32 7Z"
-                          fill="#c9fa64"
-                          stroke="#171713"
-                          stroke-width="3.5"
-                          stroke-linejoin="round"
-                        />
-                        <circle cx="32" cy="19" r="4.5" fill="#171713" />
-                      </svg>
-                    </div>
-                    <div class="shortcut-info">
-                      <span class="shortcut-name">한끼</span>
-                      <span class="shortcut-desc">후문 맛집</span>
-                    </div>
-                  </a>
-                </div>
-              </div>
-            </div>
-
-            <!-- 드로어 푸터 -->
-            <div class="mobile-nav-footer">
-              <div class="footer-contact-info">
-                <span>문의: <a href="mailto:support_team@syu.kr">support_team@syu.kr</a></span>
-              </div>
-              <div class="footer-copy">© 2023 - 2026 SYU KR. All rights reserved.</div>
-            </div>
-          </div>
         </nav>
       </div>
     </header>
-    <section id="hero" class="d-flex align-items-center">
-      <div class="container">
-        <div class="row">
-          <div
-            class="col-lg-6 d-flex flex-column justify-content-center pt-4 pt-lg-0 order-2 order-lg-1 hero-copy"
-            data-aos="fade-up"
-            data-aos-delay="200"
-          >
-            <div class="hero-stat-badge">
-              <span>SINCE 2023</span>
-              <span class="stat-divider" aria-hidden="true"></span>
-              <span>60K+</span>
-            </div>
-            <h1>SYU KR SERVICE</h1>
-            <h2>학생 생활을 더 편리하게, 한눈에 확인하세요.</h2>
+    <section id="hero" aria-labelledby="hero-title">
+      <div class="hero-kinetic-word" aria-hidden="true">
+        <span>CONVENIENT FEATURES · USEFUL TOOLS · SYU KR ·</span>
+        <span>CONVENIENT FEATURES · USEFUL TOOLS · SYU KR ·</span>
+      </div>
+
+      <div class="hero-layout container-fluid">
+        <div class="hero-copy">
+          <p class="hero-eyebrow"><span>NO.1</span> STUDENT UTILITY PLATFORM</p>
+          <h1 id="hero-title" class="hero-title">
+            <span><em>학교생활,</em></span>
+            <span><strong>편리하게.</strong></span>
+          </h1>
+
+          <div class="hero-actions">
+            <a class="hero-primary scrollto" href="#services">
+              서비스 둘러보기
+              <i class="bi bi-arrow-down-right" aria-hidden="true"></i>
+            </a>
+            <p class="hero-meta"><span>SINCE 2023</span><strong>60K+ USERS</strong></p>
           </div>
-          <div class="col-lg-6 order-1 order-lg-2 hero-img" data-aos="zoom-in" data-aos-delay="200">
-            <div class="hero-scene" data-hero-tilt>
-              <div class="hero-ambient hero-ambient-back"></div>
-              <div class="hero-orb hero-orb-left"></div>
-              <div class="hero-orb hero-orb-right"></div>
-              <div class="hero-ring hero-ring-back"></div>
-              <div class="hero-visual-frame">
-                <div class="hero-stage"></div>
-                <div class="hero-duo" aria-hidden="true">
-                  <div class="hero-character hero-character-left">
-                    <img src="assets/img/banner.png" class="hero-mascot hero-mascot-left" alt="" />
-                  </div>
-                  <div class="hero-character hero-character-right">
-                    <img src="assets/img/banner.png" class="hero-mascot hero-mascot-right" alt="" />
-                  </div>
-                </div>
-              </div>
-              <div class="hero-ring hero-ring-front"></div>
-              <div class="hero-pedestal"></div>
-              <div class="hero-spark hero-spark-one"></div>
-              <div class="hero-spark hero-spark-two"></div>
+        </div>
+
+        <div class="hero-art" data-hero-motion aria-label="SYU KR 캐릭터와 주요 학생 서비스">
+          <div class="hero-blue-panel" aria-hidden="true"></div>
+          <div class="hero-kinetic-word hero-kinetic-word-mobile" aria-hidden="true">
+            <span>CONVENIENT FEATURES · USEFUL TOOLS · SYU KR ·</span>
+            <span>CONVENIENT FEATURES · USEFUL TOOLS · SYU KR ·</span>
+          </div>
+          <div class="hero-outline-word" aria-hidden="true">SYU<br />KR</div>
+          <div class="hero-doodle hero-doodle-star" aria-hidden="true">✦</div>
+          <div class="hero-doodle hero-doodle-zigzag" aria-hidden="true">≋≋</div>
+
+          <div class="hero-mascot-stage" aria-hidden="true">
+            <div class="hero-character hero-character-left">
+              <img
+                src="assets/img/banner.webp"
+                class="hero-mascot hero-mascot-left"
+                width="1448"
+                height="1086"
+                loading="eager"
+                decoding="async"
+                fetchpriority="high"
+                alt=""
+              />
+              <img
+                src="assets/img/banner-sunglasses.webp"
+                class="hero-mascot hero-mascot-left hero-mascot-sunglasses"
+                width="1448"
+                height="1086"
+                loading="eager"
+                decoding="async"
+                fetchpriority="high"
+                alt=""
+              />
             </div>
+            <div class="hero-character hero-character-right">
+              <img
+                src="assets/img/banner.webp"
+                class="hero-mascot hero-mascot-right"
+                width="1448"
+                height="1086"
+                loading="eager"
+                decoding="async"
+                fetchpriority="high"
+                alt=""
+              />
+              <img
+                src="assets/img/banner-sunglasses.webp"
+                class="hero-mascot hero-mascot-right hero-mascot-sunglasses"
+                width="1448"
+                height="1086"
+                loading="eager"
+                decoding="async"
+                fetchpriority="high"
+                alt=""
+              />
+            </div>
+          </div>
+
+          <div class="hero-service-tags">
+            <a class="hero-service-tag hero-service-eclass" href="https://syu.kr/eclass">
+              <span class="hero-service-index">01</span>
+              <span>eClass 알리미</span>
+              <b>NEW</b>
+            </a>
+            <a class="hero-service-tag hero-service-notice" href="https://syu.kr/notice">
+              <span class="hero-service-index">02</span>
+              <span>공지 알리미</span>
+              <i class="bi bi-arrow-up-right" aria-hidden="true"></i>
+            </a>
+            <a class="hero-service-tag hero-service-bus" href="https://bus.syu.kr/">
+              <span class="hero-service-index">03</span>
+              <span>실시간 셔틀</span>
+              <i class="bi bi-arrow-up-right" aria-hidden="true"></i>
+            </a>
           </div>
         </div>
       </div>
+
+      <a class="hero-scroll-cue scrollto" href="#featured-services">
+        <span class="hero-scroll-label">SCROLL</span>
+        <span class="hero-scroll-track" aria-hidden="true"><span></span></span>
+      </a>
     </section>
     <main id="main">
       <!-- <section id="clients" class="clients section-bg">
@@ -815,13 +679,94 @@
           </div>
         </div>
       </section>-->
-      <!-- Food Service Banner (한끼 · 삼육대학교 후문) -->
-      <section class="food-service-banner">
-        <div class="container" data-aos="fade-up">
-          <div class="food-service-card">
-            <div style="display: flex; align-items: center; gap: 20px; flex: 1; min-width: 280px">
-              <div class="food-service-icon-box">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="40" height="40" aria-hidden="true">
+      <section class="campus-pick" id="featured-services" aria-labelledby="campus-pick-title">
+        <div class="container campus-pick__inner">
+          <header class="campus-pick__header">
+            <div>
+              <span class="campus-pick__new-tag">NEW</span>
+              <div class="campus-pick__title-mask">
+                <h2 id="campus-pick-title">새로운 개발 소식.</h2>
+              </div>
+            </div>
+          </header>
+
+          <div class="campus-pick__stage" aria-label="추천 서비스 선택">
+            <span class="campus-pick__outline" aria-hidden="true">WHAT'S NEW</span>
+            <span class="campus-pick__orbit" aria-hidden="true"></span>
+            <span class="campus-pick__spark campus-pick__spark--one" aria-hidden="true">✦</span>
+            <span class="campus-pick__spark campus-pick__spark--two" aria-hidden="true">✦</span>
+            <span class="campus-pick__scribble" aria-hidden="true">NEW!</span>
+
+            <div class="campus-pick__mascot" aria-hidden="true">
+              <div class="campus-pick__mascot-figure">
+                <img
+                  class="campus-pick__mascot-frame campus-pick__mascot-frame--base"
+                  src="/assets/img/mascot-presenting.webp"
+                  width="900"
+                  height="900"
+                  loading="eager"
+                  decoding="async"
+                  alt=""
+                />
+                <img
+                  class="campus-pick__mascot-frame campus-pick__mascot-frame--wink"
+                  src="/assets/img/mascot-presenting-wink.webp"
+                  width="900"
+                  height="900"
+                  loading="eager"
+                  decoding="async"
+                  alt=""
+                />
+              </div>
+            </div>
+
+            <a class="campus-tool campus-tool--eclass" href="https://www.syu.kr/eclass" target="_blank" rel="noopener noreferrer">
+              <span class="campus-tool__icon">
+                <img src="/assets/img/extension-icons/syu-eclass.png" width="48" height="48" alt="" />
+              </span>
+              <span class="campus-tool__copy">
+                <small class="campus-tool__meta">
+                  <span class="campus-tool__chrome">
+                    <svg viewBox="0 0 48 48" width="14" height="14" aria-hidden="true">
+                      <path d="M24 12h20.78a24 24 0 0 0-41.56 0L13.61 30A12 12 0 0 1 24 12z" fill="#ea4335" />
+                      <path d="M34.39 30L24 48a24 24 0 0 0 20.78-36H24a12 12 0 0 1 10.39 18z" fill="#fbbc04" />
+                      <path d="M13.61 30L3.22 12A24 24 0 0 0 24 48l10.39-18a12 12 0 0 1-20.78 0z" fill="#34a853" />
+                      <circle cx="24" cy="24" r="9.5" fill="#1a73e8" stroke="#fff" stroke-width="4" />
+                    </svg>
+                    CHROME EXTENSION
+                  </span>
+                </small>
+                <strong>eClass 알리미</strong>
+                <em>과제와 시험 마감 한눈에</em>
+              </span>
+              <i class="bi bi-arrow-up-right" aria-hidden="true"></i>
+            </a>
+
+            <a class="campus-tool campus-tool--notice" href="https://www.syu.kr/notice" target="_blank" rel="noopener noreferrer">
+              <span class="campus-tool__icon">
+                <img src="/assets/img/extension-icons/syu-notice.png" width="48" height="48" alt="" />
+              </span>
+              <span class="campus-tool__copy">
+                <small class="campus-tool__meta">
+                  <span class="campus-tool__chrome">
+                    <svg viewBox="0 0 48 48" width="14" height="14" aria-hidden="true">
+                      <path d="M24 12h20.78a24 24 0 0 0-41.56 0L13.61 30A12 12 0 0 1 24 12z" fill="#ea4335" />
+                      <path d="M34.39 30L24 48a24 24 0 0 0 20.78-36H24a12 12 0 0 1 10.39 18z" fill="#fbbc04" />
+                      <path d="M13.61 30L3.22 12A24 24 0 0 0 24 48l10.39-18a12 12 0 0 1-20.78 0z" fill="#34a853" />
+                      <circle cx="24" cy="24" r="9.5" fill="#1a73e8" stroke="#fff" stroke-width="4" />
+                    </svg>
+                    CHROME EXTENSION
+                  </span>
+                </small>
+                <strong>공지 알리미</strong>
+                <em>새 학교 공지를 빠르게</em>
+              </span>
+              <i class="bi bi-arrow-up-right" aria-hidden="true"></i>
+            </a>
+
+            <a class="campus-tool campus-tool--food" href="https://food.syu.kr/" target="_blank" rel="noopener noreferrer">
+              <span class="campus-tool__icon campus-tool__icon--food">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="44" height="44" aria-hidden="true">
                   <path d="M10 35h44c0 13-8.8 22-22 22S10 48 10 35Z" fill="#171713" />
                   <path
                     d="M13 35c1.6-8.2 8.8-13 19-13s17.4 4.8 19 13H13Z"
@@ -839,180 +784,262 @@
                   />
                   <circle cx="32" cy="19" r="4.5" fill="#171713" />
                 </svg>
-              </div>
-              <div>
-                <div class="food-title-wrap" style="display: flex; align-items: center; gap: 10px; margin-bottom: 6px; flex-wrap: wrap">
-                  <span class="food-badge-new">NEW</span>
-                  <h3
-                    style="
-                      font-weight: 900;
-                      font-size: 1.65rem;
-                      margin: 0;
-                      color: #1e293b;
-                      font-family: 'NanumSquare', 'Pretendard', sans-serif;
-                    "
-                  >
-                    한끼 · 삼육대학교 후문
-                  </h3>
-                </div>
-                <p style="color: #64748b; font-size: 0.98rem; line-height: 1.5; margin-bottom: 0">
-                  삼육대학교 후문 근처 음식점과 카페를 가까운 순으로 넘겨보는 맛집 큐레이션
-                </p>
-              </div>
-            </div>
-            <div style="flex: 0 0 auto">
-              <a href="https://food.syu.kr/" target="_blank" class="food-service-btn">
-                <span>후문 맛집 둘러보기</span>
-                <i class="bi bi-arrow-right-circle-fill" style="font-size: 1.15rem; margin-left: 2px"></i>
-              </a>
-            </div>
+              </span>
+              <span class="campus-tool__copy">
+                <small class="campus-tool__meta">NEW SERVICE</small>
+                <strong>후문 맛집</strong>
+                <em>오늘의 한 끼 고르기</em>
+              </span>
+              <i class="bi bi-arrow-up-right" aria-hidden="true"></i>
+            </a>
           </div>
+
+          <div class="campus-pick__hint" aria-hidden="true"><span>새로운 기능 · SYU KR</span><i></i></div>
         </div>
+
+        <a
+          class="campus-pick__scroll-cue campus-pick__scroll-cue--desktop scrollto"
+          href="#shuttle-services"
+          aria-label="셔틀버스 서비스로 이동"
+        >
+          <span class="campus-pick__scroll-label">SCROLL</span>
+          <span class="campus-pick__scroll-track" aria-hidden="true"><span></span></span>
+        </a>
+        <a
+          class="campus-pick__scroll-cue campus-pick__scroll-cue--compact scrollto"
+          href="#services"
+          aria-label="전체 서비스 목록으로 이동"
+        >
+          <span class="campus-pick__scroll-label">SCROLL</span>
+          <span class="campus-pick__scroll-track" aria-hidden="true"><span></span></span>
+        </a>
       </section>
-      <!-- Chrome Extension Banner -->
-      <section class="chrome-extension-banner">
-        <div class="container" data-aos="fade-up">
-          <div class="chrome-extension-card">
-            <div style="display: flex; align-items: center; gap: 20px; flex: 1; min-width: 280px">
-              <div class="chrome-service-icon-box">
-                <i class="bi bi-bell-fill"></i>
-              </div>
-              <div>
-                <div class="chrome-title-wrap" style="display: flex; align-items: center; gap: 10px; margin-bottom: 6px; flex-wrap: wrap">
-                  <h3
-                    style="
-                      font-weight: 900;
-                      font-size: 1.65rem;
-                      margin: 0;
-                      color: #1e293b;
-                      font-family: 'NanumSquare', 'Pretendard', sans-serif;
-                    "
-                  >
-                    SYU 공지 알리미
-                  </h3>
-                </div>
-                <p style="color: #64748b; font-size: 0.98rem; line-height: 1.5; margin-bottom: 0">
-                  크롬 브라우저 확장 프로그램으로 학교 공지를 간편하게 확인할 수 있어요!
-                </p>
-              </div>
-            </div>
-            <div style="flex: 0 0 auto">
-              <a href="https://www.syu.kr/notice" target="_blank" class="chrome-extension-btn">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 48 48"
-                  width="22"
-                  height="22"
-                  style="flex-shrink: 0"
-                  aria-hidden="true"
+
+      <section class="shuttle-orbit" id="shuttle-services" aria-labelledby="shuttle-orbit-title" data-shuttle-motion>
+        <div class="shuttle-orbit__backdrop" aria-hidden="true"></div>
+
+        <div class="container shuttle-orbit__inner">
+          <header class="shuttle-orbit__header">
+            <p class="shuttle-orbit__eyebrow"><span>삼육대학교 셔틀버스</span></p>
+            <h2 id="shuttle-orbit-title">버스, <strong>지금 어디쯤?</strong></h2>
+          </header>
+
+          <div class="shuttle-orbit__vehicle">
+            <div class="shuttle-orbit__vehicle-float">
+              <img
+                src="/assets/img/shuttle-bus-3d.webp"
+                width="1792"
+                height="896"
+                loading="eager"
+                decoding="async"
+                draggable="false"
+                alt=""
+              />
+
+              <nav class="shuttle-orbit__controls" aria-label="셔틀버스 서비스">
+                <a
+                  class="shuttle-control"
+                  data-short="위치"
+                  href="https://bus.syu.kr/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="셔틀버스 실시간 위치 확인"
                 >
-                  <circle cx="24" cy="24" r="12" fill="#fff" />
-                  <path d="M24 12h20.78a24 24 0 0 0-41.56 0L13.61 30A12 12 0 0 1 24 12z" fill="#ea4335" />
-                  <path d="M34.39 30L24 48a24 24 0 0 0 20.78-36H24a12 12 0 0 1 10.39 18z" fill="#fbbc04" />
-                  <path d="M13.61 30L3.22 12A24 24 0 0 0 24 48l10.39-18a12 12 0 0 1-20.78 0z" fill="#34a853" />
-                  <circle cx="24" cy="24" r="12" fill="#fff" />
-                  <circle cx="24" cy="24" r="9.5" fill="#1a73e8" />
-                </svg>
-                <span>Chrome에 추가</span>
-                <i class="bi bi-arrow-right-circle-fill" style="font-size: 1.15rem; margin-left: 2px"></i>
-              </a>
+                  <span class="shuttle-control__index">01</span>
+                  <span class="shuttle-control__icon"><i class="bi bi-geo-alt-fill" aria-hidden="true"></i></span>
+                  <span class="shuttle-control__copy"><strong>실시간 위치</strong><small>운행 중인 버스 추적</small></span>
+                  <i class="bi bi-arrow-up-right" aria-hidden="true"></i>
+                </a>
+
+                <a
+                  class="shuttle-control"
+                  data-short="노선"
+                  href="https://bus.syu.kr/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="셔틀버스 노선도 확인"
+                >
+                  <span class="shuttle-control__index">02</span>
+                  <span class="shuttle-control__icon"><i class="bi bi-map" aria-hidden="true"></i></span>
+                  <span class="shuttle-control__copy"><strong>노선도</strong><small>정류장과 운행 경로</small></span>
+                  <i class="bi bi-arrow-up-right" aria-hidden="true"></i>
+                </a>
+
+                <a
+                  class="shuttle-control"
+                  data-short="도착"
+                  href="https://bus.syu.kr/arrivalTime"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="셔틀버스 도착시간 확인"
+                >
+                  <span class="shuttle-control__index">03</span>
+                  <span class="shuttle-control__icon"><i class="bi bi-clock-history" aria-hidden="true"></i></span>
+                  <span class="shuttle-control__copy"><strong>도착시간</strong><small>정류장별 도착 예정</small></span>
+                  <i class="bi bi-arrow-up-right" aria-hidden="true"></i>
+                </a>
+
+                <a
+                  class="shuttle-control"
+                  data-short="구버전"
+                  href="https://bus.syu.kr/monitor"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="셔틀버스 구버전 도착시간 화면 열기"
+                >
+                  <span class="shuttle-control__index">04</span>
+                  <span class="shuttle-control__icon"><i class="bi bi-display" aria-hidden="true"></i></span>
+                  <span class="shuttle-control__copy"><strong>구버전</strong><small>기존 도착시간 확인</small></span>
+                  <i class="bi bi-arrow-up-right" aria-hidden="true"></i>
+                </a>
+              </nav>
             </div>
+            <span class="shuttle-orbit__vehicle-shadow"></span>
           </div>
+
+          <aside class="shuttle-route-card" aria-label="셔틀버스 주요 정류장">
+            <section class="shuttle-route-card__route shuttle-route-card__route--morning">
+              <div class="shuttle-route-card__title">
+                <strong>오전 순환</strong>
+              </div>
+              <div class="shuttle-metro-line" aria-label="오전에만 삼육대, 화랑대, 삼육대 순환">
+                <span class="shuttle-metro-stop stop-start">
+                  <i aria-hidden="true"></i><span><b>삼육대</b></span>
+                </span>
+                <span class="shuttle-metro-stop stop-middle">
+                  <i aria-hidden="true"></i
+                  ><span><strong>화랑대</strong><span class="shuttle-route-card__line line-6" aria-label="6호선">6</span></span>
+                </span>
+                <span class="shuttle-metro-stop stop-end">
+                  <i aria-hidden="true"></i><span><b>삼육대</b></span>
+                </span>
+              </div>
+            </section>
+
+            <hr class="shuttle-route-card__divider" aria-hidden="true" />
+
+            <section class="shuttle-route-card__route shuttle-route-card__route--afternoon">
+              <div class="shuttle-route-card__title">
+                <strong>오후 순환</strong>
+              </div>
+              <div
+                class="shuttle-metro-loop"
+                aria-label="삼육대 출발, 화랑대 하차, 태릉입구 하차, 석계 승하차, 태릉입구 승차, 삼육대 도착"
+              >
+                <span class="shuttle-loop-stop loop-campus">
+                  <i aria-hidden="true"></i><span><b>삼육대</b></span>
+                </span>
+                <span class="shuttle-loop-stop loop-hwarangdae">
+                  <i aria-hidden="true"></i
+                  ><span
+                    ><strong>화랑대</strong><span class="shuttle-route-card__line line-6" aria-label="6호선">6</span
+                    ><small class="status-drop">하차</small></span
+                  >
+                </span>
+                <span class="shuttle-loop-stop loop-taereung-drop">
+                  <i aria-hidden="true"></i
+                  ><span
+                    ><strong>태릉입구</strong><span class="shuttle-route-card__line line-6" aria-label="6호선">6</span
+                    ><span class="shuttle-route-card__line line-7" aria-label="7호선">7</span
+                    ><small class="status-drop">하차</small></span
+                  >
+                </span>
+                <span class="shuttle-loop-stop loop-seokgye">
+                  <i aria-hidden="true"></i
+                  ><span
+                    ><strong>석계</strong><span class="shuttle-route-card__line line-1" aria-label="1호선">1</span
+                    ><span class="shuttle-route-card__line line-6" aria-label="6호선">6</span
+                    ><small class="status-transfer">승·하차</small></span
+                  >
+                </span>
+                <span class="shuttle-loop-stop loop-taereung-board">
+                  <i aria-hidden="true"></i
+                  ><span
+                    ><strong>태릉입구</strong><span class="shuttle-route-card__line line-6" aria-label="6호선">6</span
+                    ><span class="shuttle-route-card__line line-7" aria-label="7호선">7</span
+                    ><small class="status-board">승차</small></span
+                  >
+                </span>
+              </div>
+            </section>
+          </aside>
         </div>
+
+        <a class="shuttle-orbit__scroll-cue scrollto" href="#services" aria-label="전체 서비스 목록으로 이동">
+          <span class="shuttle-orbit__scroll-label">SCROLL</span>
+          <span class="shuttle-orbit__scroll-track" aria-hidden="true"><span></span></span>
+        </a>
       </section>
+
       <section id="services" class="bento-section">
         <div class="container" data-aos="fade-up">
           <div class="bento-header">
             <h2>삼육대학교 재학생 서비스</h2>
-            <p>수강신청부터 시간표, 실시간 셔틀버스, 열람실 좌석까지 캠퍼스 생활에 필요한 서비스를 한눈에 확인하세요.</p>
+            <p>셔틀버스부터 수강신청과 시간표, 열람실 좌석까지 캠퍼스 생활에 필요한 서비스를 한눈에 확인하세요.</p>
           </div>
 
-          <!-- Category 1: 셔틀버스 운행 서비스 -->
-          <h3 class="bento-category-title">셔틀버스 운행 서비스</h3>
-          <div class="row g-4 mb-5">
-            <!-- 셔틀버스 실시간 위치 -->
-            <div class="col-xl-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
-              <a href="https://bus.syu.kr/" target="_blank" class="bento-card bento-card-sub">
+          <h3 class="bento-category-title bento-category-title--first shuttle-compact-only">셔틀버스 바로가기</h3>
+          <div class="row g-4 mb-5 shuttle-compact-grid">
+            <div class="col-6 col-md-6" data-aos="fade-up" data-aos-delay="100">
+              <a href="https://bus.syu.kr/" target="_blank" rel="noopener noreferrer" class="bento-card bento-card-sub">
                 <div>
                   <div class="bento-card-top">
-                    <div class="bento-icon icon-cyan">
-                      <i class="bi bi-geo-alt-fill"></i>
-                    </div>
+                    <div class="bento-icon icon-blue"><i class="bi bi-geo-alt-fill"></i></div>
                     <div class="bento-card-arrow"><i class="bi bi-arrow-up-right"></i></div>
                   </div>
                   <div class="bento-card-body">
-                    <h4>셔틀버스 실시간 위치</h4>
-                    <p>지도 위에서 실시간으로 운행 중인 교내 셔틀버스의 현재 주행 위치를 확인하세요.</p>
+                    <h4>실시간 위치</h4>
+                    <p>현재 운행 중인 셔틀버스의 위치를 지도에서 바로 확인하세요.</p>
                   </div>
                 </div>
               </a>
             </div>
 
-            <!-- 셔틀버스 노선도 뷰 -->
-            <div class="col-xl-3 col-md-6" data-aos="fade-up" data-aos-delay="150">
-              <a href="https://bus.syu.kr/bus" target="_blank" class="bento-card bento-card-sub">
+            <div class="col-6 col-md-6" data-aos="fade-up" data-aos-delay="150">
+              <a href="https://bus.syu.kr/" target="_blank" rel="noopener noreferrer" class="bento-card bento-card-sub">
                 <div>
                   <div class="bento-card-top">
-                    <div class="bento-icon icon-blue">
-                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path
-                          d="M4 17L9 12H15L20 7"
-                          stroke="currentColor"
-                          stroke-width="2.2"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        />
-                        <path d="M9 6V12" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" />
-                        <path d="M15 12V18" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" />
-                        <circle cx="4" cy="17" r="2" fill="#ffffff" stroke="currentColor" stroke-width="1.8" />
-                        <circle cx="9" cy="6" r="2" fill="#ffffff" stroke="currentColor" stroke-width="1.8" />
-                        <circle cx="9" cy="12" r="2.8" fill="#ffffff" stroke="currentColor" stroke-width="2" />
-                        <circle cx="15" cy="12" r="2.8" fill="#ffffff" stroke="currentColor" stroke-width="2" />
-                        <circle cx="15" cy="18" r="2" fill="#ffffff" stroke="currentColor" stroke-width="1.8" />
-                        <circle cx="20" cy="7" r="2" fill="#ffffff" stroke="currentColor" stroke-width="1.8" />
-                      </svg>
-                    </div>
+                    <div class="bento-icon icon-purple"><i class="bi bi-map"></i></div>
                     <div class="bento-card-arrow"><i class="bi bi-arrow-up-right"></i></div>
                   </div>
                   <div class="bento-card-body">
-                    <h4>셔틀버스 노선도 뷰</h4>
-                    <p>학교 ↔ 태릉입구 ↔ 석계역 전용 노선도로 각 정류장별 버스 위치와 운행 현황을 확인하세요.</p>
+                    <h4>셔틀버스 노선도</h4>
+                    <p>정류장 위치와 셔틀버스 운행 경로를 한눈에 확인하세요.</p>
                   </div>
                 </div>
               </a>
             </div>
 
-            <!-- 셔틀버스 도착시간 -->
-            <div class="col-xl-3 col-md-6" data-aos="fade-up" data-aos-delay="200">
-              <a href="https://bus.syu.kr/arrivalTime" target="_blank" class="bento-card bento-card-sub">
+            <div class="col-6 col-md-6" data-aos="fade-up" data-aos-delay="200">
+              <a
+                href="https://bus.syu.kr/arrivalTime"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="bento-card bento-card-sub"
+              >
                 <div>
                   <div class="bento-card-top">
-                    <div class="bento-icon icon-emerald">
-                      <i class="bi bi-clock-history"></i>
-                    </div>
+                    <div class="bento-icon icon-emerald"><i class="bi bi-clock-history"></i></div>
                     <div class="bento-card-arrow"><i class="bi bi-arrow-up-right"></i></div>
                   </div>
                   <div class="bento-card-body">
-                    <h4>셔틀버스 도착시간</h4>
-                    <p>화랑대·태릉입구·석계·별내역 셔틀버스의 실시간 도착 예정 시간과 운행 정보를 확인하세요.</p>
+                    <h4>도착시간</h4>
+                    <p>정류장별 셔틀버스 도착 예정 시간을 빠르게 확인하세요.</p>
                   </div>
                 </div>
               </a>
             </div>
 
-            <!-- 셔틀버스 도착시간 (구) -->
-            <div class="col-xl-3 col-md-6" data-aos="fade-up" data-aos-delay="250">
-              <a href="https://bus.syu.kr/monitor" target="_blank" class="bento-card bento-card-sub">
+            <div class="col-6 col-md-6" data-aos="fade-up" data-aos-delay="250">
+              <a href="https://bus.syu.kr/monitor" target="_blank" rel="noopener noreferrer" class="bento-card bento-card-sub">
                 <div>
                   <div class="bento-card-top">
-                    <div class="bento-icon icon-emerald">
-                      <i class="bi bi-clock-history"></i>
-                    </div>
+                    <div class="bento-icon icon-slate"><i class="bi bi-display"></i></div>
                     <div class="bento-card-arrow"><i class="bi bi-arrow-up-right"></i></div>
                   </div>
                   <div class="bento-card-body">
-                    <h4>셔틀버스 도착시간 (구)</h4>
-                    <p>기존 구버전 화면으로 셔틀버스 정류장별 도착 시간과 순서를 확인하세요.</p>
+                    <h4>구버전 도착시간</h4>
+                    <p>기존 화면에 익숙하다면 이전 버전의 도착시간을 이용하세요.</p>
                   </div>
                 </div>
               </a>
@@ -1020,7 +1047,7 @@
           </div>
 
           <!-- Category 2: 수강신청 및 학사 서비스 -->
-          <h3 class="bento-category-title">수강신청 및 학사 서비스</h3>
+          <h3 class="bento-category-title bento-category-title--first">수강신청 및 학사 서비스</h3>
           <div class="row g-4 mb-5">
             <!-- 시간표 마법사 -->
             <div class="col-xl-3 col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
@@ -1124,7 +1151,7 @@
                   </div>
                   <div class="bento-card-body">
                     <h4>컴퓨터·데이터클라우드 수강현황</h4>
-                    <p>컴퓨터공학부 및 데이터클라우드공학과 개설 과목의 실시간 신청 인원과 잔여석을 확인하세요.</p>
+                    <p>개설 과목의 실시간 수강신청 인원과 잔여석을 확인하세요.</p>
                   </div>
                 </div>
               </a>
@@ -1142,7 +1169,7 @@
                   </div>
                   <div class="bento-card-body">
                     <h4>화학생명과학과 수강현황</h4>
-                    <p>화학생명과학과 전공 및 개설 과목의 실시간 수강신청 인원과 정원 충원 현황을 확인하세요.</p>
+                    <p>개설 과목의 실시간 수강신청 인원과 잔여석을 확인하세요.</p>
                   </div>
                 </div>
               </a>
@@ -1229,7 +1256,7 @@
     </main>
     <footer class="site-footer">
       <div class="container">
-        <p class="footer-copyright">© 2023 - 2026 SYU KR (KIM SANG YUN). All rights reserved.</p>
+        <p class="footer-copyright">© 2023 - 2026 SYU KR. All rights reserved.</p>
         <p class="footer-disclaimer">해당 사이트는 삼육대학교(학교법인 삼육학원)와 무관한 웹 사이트입니다.</p>
         <p class="footer-contact">서비스 문의: <a href="mailto:support_team@syu.kr">support_team@syu.kr</a></p>
       </div>

@@ -4,7 +4,7 @@ import legacyDocument from '~/page/index.html?raw'
 const siteUrl = 'https://www.syu.kr'
 const pageTitle = 'SYU KR | 삼육대학교 재학생 편의 서비스'
 const pageDescription =
-  '삼육대학교 재학생을 위한 서비스 허브입니다. 시간표 마법사, 수강신청 장바구니, 경쟁률 조회, 공지 알리미 등 캠퍼스 생활에 필요한 서비스를 한눈에 확인하세요.'
+  '삼육대학교 재학생을 위한 서비스 허브입니다. 시간표 마법사, 수강신청 장바구니, 학교 공지와 eClass 마감 알리미 등 캠퍼스 생활에 필요한 서비스를 한눈에 확인하세요.'
 const ogImage = `${siteUrl}/assets/img/banner.png`
 const robotsContent = 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1'
 
@@ -34,6 +34,11 @@ const topServices = [
     name: 'SYU 공지 알리미',
     description: '학교 공지를 간편하게 확인하는 공지 알리미 서비스',
     url: 'https://www.syu.kr/notice',
+  },
+  {
+    name: 'SYU eClass 알리미',
+    description: '온라인강의·과제·시험의 D-Day와 마감 알림을 확인하는 Chrome 확장 프로그램',
+    url: 'https://www.syu.kr/eclass',
   },
   {
     name: 'SU-TALK CHAT VIEWER',
@@ -107,7 +112,7 @@ useHead({
     { name: 'description', content: pageDescription },
     { name: 'robots', content: robotsContent },
     { name: 'googlebot', content: robotsContent },
-    { name: 'theme-color', content: '#0076ff' },
+    { name: 'theme-color', content: '#f2eee5' },
     { name: 'application-name', content: 'SYU KR' },
     { name: 'apple-mobile-web-app-title', content: 'SYU KR' },
     { property: 'og:locale', content: 'ko_KR' },
@@ -134,10 +139,9 @@ useHead({
       rel: 'stylesheet',
     },
     { rel: 'sitemap', type: 'application/xml', href: `${siteUrl}/sitemap.xml` },
-    { href: '/assets/vendor/aos/aos.css', rel: 'stylesheet' },
     { href: '/assets/vendor/bootstrap/css/bootstrap.min.css', rel: 'stylesheet' },
     { href: '/assets/vendor/bootstrap-icons/bootstrap-icons.css', rel: 'stylesheet' },
-    { href: '/assets/css/style.css', rel: 'stylesheet' },
+    { href: '/assets/css/style.css?v=20261003-shuttle-15', rel: 'stylesheet' },
   ],
   style: inlineStyles.map((content, index) => ({
     innerHTML: content,
@@ -166,7 +170,6 @@ useHead({
       key: 'gtag-inline',
       tagPosition: 'head',
     },
-    { src: '/assets/vendor/aos/aos.js', tagPosition: 'head' },
     { src: '/assets/js/main.js', tagPosition: 'bodyClose' },
   ],
 })
